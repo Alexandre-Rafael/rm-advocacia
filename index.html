@@ -1,0 +1,1770 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método RM | Rockenbach & Mota - Proteção para o Produtor Rural</title>
+    <meta name="description"
+        content="Seu contrato de financiamento rural vence em abril? O Método RM protege seu negócio com diagnóstico, reorganização e acompanhamento. Fale com um especialista.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* ===== RESET & BASE ===== */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #2A3A4C;
+            background: #FAF7F0;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ===== VARIABLES ===== */
+        :root {
+            --navy: #2A3A4C;
+            --navy-dark: #1C2836;
+            --gold: #DEC686;
+            --gold-pale: #F8F0DC;
+            --green: #2E7D4F;
+            --green-pale: #E6F3EB;
+            --cream: #FAF7F0;
+            --white: #FFFFFF;
+        }
+
+        /* ===== TYPOGRAPHY ===== */
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Tenor Sans', serif;
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(28, 40, 54, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 16px 0;
+            transition: padding 0.3s, box-shadow 0.3s;
+        }
+
+        .navbar.scrolled {
+            padding: 10px 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar-logo img {
+            height: 42px;
+        }
+
+        .navbar-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--green);
+            color: var(--white);
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .navbar-cta:hover {
+            background: #256b42;
+            transform: translateY(-1px);
+        }
+
+        .navbar-cta svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: var(--navy-dark);
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('assets/bg-hero.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 60% bottom;
+            z-index: 0;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 65%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(28, 40, 54, 1) 0%, rgba(28, 40, 54, 0.98) 40%, rgba(28, 40, 54, 0.7) 75%, transparent 100%);
+            z-index: 1;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 80px 0;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            max-width: 550px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(222, 198, 134, 0.15);
+            border: 1px solid var(--gold);
+            border-radius: 50px;
+            padding: 8px 20px;
+            margin-bottom: 32px;
+            font-family: 'Tenor Sans', serif;
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            color: var(--gold);
+        }
+
+        .hero-badge span {
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            color: var(--white);
+            max-width: 550px;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 strong {
+            color: var(--gold);
+        }
+
+        .hero-sub {
+            font-size: clamp(1rem, 2vw, 1.15rem);
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 480px;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--green);
+            color: var(--white);
+            padding: 16px 36px;
+            border-radius: 50px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(46, 125, 79, 0.35);
+        }
+
+        .btn-primary:hover {
+            background: #256b42;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 28px rgba(46, 125, 79, 0.45);
+        }
+
+        .btn-primary svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .hero-urgency {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+            background: rgba(222, 198, 134, 0.12);
+            border: 1px solid rgba(222, 198, 134, 0.3);
+            border-radius: 12px;
+            padding: 14px 20px;
+            color: var(--gold);
+        }
+
+        .hero-urgency-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-urgency-header svg {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+            color: var(--white);
+        }
+
+        .hero-urgency-header span {
+            color: var(--white);
+        }
+
+        .countdown-timer {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Tenor Sans', serif;
+            font-size: 1.4rem;
+            line-height: 1;
+            color: var(--gold);
+        }
+
+        .countdown-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 40px;
+        }
+
+        .countdown-item span {
+            font-size: 0.65rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 4px;
+        }
+
+        .countdown-sep {
+            margin-top: -14px;
+            font-weight: 300;
+            opacity: 0.5;
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 50px;
+            border: 2px solid rgba(222, 198, 134, 0.4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: bounce 2s infinite;
+            z-index: 2;
+        }
+
+        .hero-scroll svg {
+            width: 20px;
+            height: 20px;
+            color: var(--gold);
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+
+            50% {
+                transform: translateX(-50%) translateY(8px);
+            }
+        }
+
+        /* ===== SECTION GENERAL ===== */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-label {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--green);
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            color: var(--navy-dark);
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            font-size: 1.05rem;
+            color: #5a6a7a;
+            max-width: 600px;
+            margin-bottom: 60px;
+        }
+
+        /* ===== PAIN SECTION ===== */
+        .pain {
+            background: var(--white);
+        }
+
+        .pain-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .pain-image {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .pain-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        .pain-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(28, 40, 54, 0.3), transparent);
+            border-radius: 20px;
+        }
+
+        .pain-items {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .pain-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            padding: 20px;
+            border-radius: 12px;
+            background: var(--cream);
+            transition: transform 0.3s;
+        }
+
+        .pain-item:hover {
+            transform: translateX(8px);
+        }
+
+        .pain-icon {
+            flex-shrink: 0;
+            width: 44px;
+            height: 44px;
+            background: rgba(222, 198, 134, 0.2);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pain-icon svg {
+            width: 22px;
+            height: 22px;
+            color: var(--gold);
+        }
+
+        .pain-item h4 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .pain-item p {
+            font-size: 0.85rem;
+            color: #5a6a7a;
+            line-height: 1.6;
+        }
+
+        /* ===== METODO SECTION ===== */
+        .metodo {
+            background: var(--navy-dark);
+            color: var(--white);
+        }
+
+        .metodo .section-label {
+            color: var(--gold);
+        }
+
+        .metodo .section-title {
+            color: var(--white);
+        }
+
+        .metodo .section-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--gold), var(--green));
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 32px;
+            align-items: flex-start;
+            padding: 32px 0;
+            position: relative;
+        }
+
+        .timeline-number {
+            flex-shrink: 0;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--gold), #c9a84e);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Tenor Sans', serif;
+            font-size: 1.4rem;
+            color: var(--navy-dark);
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 4px 20px rgba(222, 198, 134, 0.3);
+        }
+
+        .timeline-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: var(--gold);
+        }
+
+        .timeline-content p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.7;
+        }
+
+        /* ===== RESULTADOS SECTION ===== */
+        .resultados {
+            background: var(--cream);
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .result-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 32px 28px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(42, 58, 76, 0.06);
+        }
+
+        .result-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 40px rgba(42, 58, 76, 0.1);
+        }
+
+        .result-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--green-pale);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .result-icon svg {
+            width: 26px;
+            height: 26px;
+            color: var(--green);
+        }
+
+        .result-card h4 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .result-card p {
+            font-size: 0.85rem;
+            color: #5a6a7a;
+            line-height: 1.7;
+        }
+
+        /* ===== DIFERENCIAL SECTION ===== */
+        .diferencial {
+            background: var(--white);
+        }
+
+        .compare-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .compare-card {
+            border-radius: 20px;
+            padding: 40px 32px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .compare-card.common {
+            background: #f0f2f5;
+            border: 1px solid #dde1e6;
+        }
+
+        .compare-card.rm {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+            color: var(--white);
+            border: 2px solid var(--gold);
+        }
+
+        .compare-card.rm::before {
+            content: 'RECOMENDADO';
+            position: absolute;
+            top: 16px;
+            right: -30px;
+            background: var(--gold);
+            color: var(--navy-dark);
+            padding: 4px 40px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            transform: rotate(45deg);
+        }
+
+        .compare-label {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .compare-card.common .compare-label {
+            color: #8a95a3;
+        }
+
+        .compare-card.rm .compare-label {
+            color: var(--gold);
+        }
+
+        .compare-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 24px;
+        }
+
+        .compare-card.rm h3 {
+            color: var(--gold);
+        }
+
+        .compare-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .compare-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .compare-list li svg {
+            flex-shrink: 0;
+            width: 20px;
+            height: 20px;
+            margin-top: 2px;
+        }
+
+        .compare-card.common .compare-list li svg {
+            color: #c0c7d0;
+        }
+
+        .compare-card.rm .compare-list li svg {
+            color: var(--gold);
+        }
+
+        /* ===== SOBRE SECTION ===== */
+        .sobre {
+            background: var(--cream);
+        }
+
+        .sobre-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .sobre-text h2 {
+            margin-bottom: 20px;
+        }
+
+        .sobre-text p {
+            color: #5a6a7a;
+            margin-bottom: 16px;
+            font-size: 0.95rem;
+        }
+
+        .team-cards {
+            display: flex;
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .team-card {
+            text-align: center;
+            flex: 1;
+        }
+
+        .team-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            object-position: top;
+            border-radius: 16px;
+            margin-bottom: 16px;
+            box-shadow: 0 8px 30px rgba(42, 58, 76, 0.12);
+        }
+
+        .team-card h4 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .team-card span {
+            font-size: 0.8rem;
+            color: var(--green);
+            font-weight: 500;
+        }
+
+        /* ===== FORM SECTION ===== */
+        .formulario {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .formulario::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(222, 198, 134, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .form-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .form-text .section-label {
+            color: var(--gold);
+        }
+
+        .form-text .section-title {
+            color: var(--white);
+        }
+
+        .form-text p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1rem;
+            margin-bottom: 24px;
+        }
+
+        .form-trust {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .form-trust-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .form-trust-item svg {
+            width: 18px;
+            height: 18px;
+            color: var(--gold);
+            flex-shrink: 0;
+        }
+
+        .form-box {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 6px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 14px 18px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            color: var(--white);
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+            transition: border-color 0.3s;
+            outline: none;
+        }
+
+        .form-group input::placeholder {
+            color: rgba(255, 255, 255, 0.35);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: var(--gold);
+        }
+
+        .form-group select option {
+            background: var(--navy-dark);
+            color: var(--white);
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 16px;
+            background: var(--green);
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(46, 125, 79, 0.35);
+        }
+
+        .form-submit:hover {
+            background: #256b42;
+            transform: translateY(-2px);
+        }
+
+        .form-disclaimer {
+            text-align: center;
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.4);
+            margin-top: 16px;
+        }
+
+        .form-disclaimer svg {
+            display: inline;
+            width: 14px;
+            height: 14px;
+            vertical-align: -2px;
+            margin-right: 4px;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--navy-dark);
+            color: rgba(255, 255, 255, 0.6);
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo img {
+            height: 40px;
+            margin-bottom: 16px;
+        }
+
+        .footer-about p {
+            font-size: 0.85rem;
+            line-height: 1.7;
+        }
+
+        .footer h5 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--gold);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-links li {
+            font-size: 0.85rem;
+        }
+
+        .footer-links a {
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+        }
+
+        .footer-contact-item svg {
+            width: 16px;
+            height: 16px;
+            color: var(--gold);
+            flex-shrink: 0;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.75rem;
+        }
+
+        /* ===== WHATSAPP FLOAT ===== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 999;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: pulse-whatsapp 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 28px rgba(37, 211, 102, 0.5);
+        }
+
+        .whatsapp-float svg {
+            width: 32px;
+            height: 32px;
+            color: var(--white);
+        }
+
+        @keyframes pulse-whatsapp {
+            0% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            }
+
+            50% {
+                box-shadow: 0 4px 30px rgba(37, 211, 102, 0.6), 0 0 0 10px rgba(37, 211, 102, 0.1);
+            }
+
+            100% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            }
+        }
+
+        /* ===== ANIMATIONS ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 992px) {
+
+            .pain-grid,
+            .sobre-grid,
+            .form-wrapper,
+            .compare-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .results-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .pain-image {
+                order: -1;
+            }
+
+            .pain-image img {
+                height: 260px;
+            }
+
+            .hero::after {
+                width: 75%;
+            }
+
+            .hero-content {
+                max-width: 500px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                align-items: flex-start;
+                padding-top: 80px;
+                min-height: 100svh;
+            }
+
+            .hero::before {
+                background: url('assets/bg-hero-mobile.jpg') 20% bottom / cover no-repeat;
+            }
+
+            .hero::after {
+                width: 100%;
+                height: 70%;
+                background: linear-gradient(to bottom, rgba(28, 40, 54, 0.97) 0%, rgba(28, 40, 54, 0.93) 50%, rgba(28, 40, 54, 0.6) 75%, rgba(28, 40, 54, 0.1) 92%, transparent 100%);
+            }
+
+            .hero-content {
+                padding: 40px 0 0;
+                max-width: 100%;
+            }
+
+            .hero h1 {
+                font-size: clamp(1.8rem, 6vw, 2.4rem);
+                max-width: 100%;
+            }
+
+            .hero-sub {
+                max-width: 100%;
+                font-size: 0.95rem;
+            }
+
+            .hero-scroll {
+                display: none;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 600px) {
+            section {
+                padding: 70px 0;
+            }
+
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .team-cards {
+                flex-direction: column;
+            }
+
+            .team-card img {
+                height: 320px;
+            }
+
+            .form-box {
+                padding: 28px 20px;
+            }
+
+            .compare-card {
+                padding: 32px 24px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 8px;
+                text-align: center;
+            }
+
+            .navbar-cta span {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#" class="navbar-logo">
+                <img src="assets/PNG BRANCO.png" alt="Rockenbach & Mota">
+            </a>
+            <a href="#formulario" class="navbar-cta">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                <span>Fale com um especialista</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-bottom: 32px;">
+                    <div class="hero-badge" style="margin-bottom: 0;">MÉTODO <span>RM</span></div>
+                    <div class="hero-urgency" style="flex-direction: row; padding: 6px 14px; gap: 12px; background: rgba(0,0,0,0.15); border: 1px solid rgba(222,198,134,0.15);">
+                        <div class="hero-urgency-header" style="font-size: 0.65rem;">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                            </svg>
+                            <span>Prazo Final em:</span>
+                        </div>
+                        <div class="countdown-timer" id="heroCountdown" style="font-size: 1.1rem; gap: 8px;">
+                            <div class="countdown-item">
+                                <strong id="cd-dias">00</strong>
+                                <span style="font-size: 0.55rem; margin-top: 2px;">Dias</span>
+                            </div>
+                            <div class="countdown-sep" style="margin-top: -10px;">:</div>
+                            <div class="countdown-item">
+                                <strong id="cd-horas">00</strong>
+                                <span style="font-size: 0.55rem; margin-top: 2px;">Hrs</span>
+                            </div>
+                            <div class="countdown-sep" style="margin-top: -10px;">:</div>
+                            <div class="countdown-item">
+                                <strong id="cd-minutos">00</strong>
+                                <span style="font-size: 0.55rem; margin-top: 2px;">Min</span>
+                            </div>
+                            <div class="countdown-sep" style="margin-top: -10px;">:</div>
+                            <div class="countdown-item">
+                                <strong id="cd-segundos">00</strong>
+                                <span style="font-size: 0.55rem; margin-top: 2px;">Seg</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h1>Não aceite juros abusivos na renovação da sua <strong>dívida rural.</strong></h1>
+                <p class="hero-sub"
+                    style="color: var(--white); font-weight: 500; font-size: clamp(1.1rem, 2vw, 1.25rem); margin-bottom: 16px;">
+                    Renegociar direto com o gerente é o caminho mais rápido para perder dinheiro e travar sua produção.
+                </p>
+                <p class="hero-sub" style="font-size: 0.95rem;">Nós diagnosticamos possíveis cobranças indevidas e
+                    assumimos a linha de frente com o banco por você.</p>
+                <div class="hero-actions">
+                    <a href="#formulario" class="btn-primary">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                        </svg>
+                        Quero blindar meu financeiro
+                    </a>
+                </div>
+            </div>
+        </div>
+        <a href="#dor" class="hero-scroll">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9" />
+            </svg>
+        </a>
+    </section>
+
+    <!-- PAIN / PROBLEM -->
+    <section class="pain" id="dor">
+        <div class="container">
+            <div class="pain-grid">
+                <div class="pain-image fade-in">
+                    <img src="assets/olhando horizonte.jpg" alt="Produtor rural olhando para o horizonte">
+                </div>
+                <div class="fade-in">
+                    <div class="section-label">O problema</div>
+                    <h2 class="section-title">O que acontece quando o produtor vai ao banco sozinho</h2>
+                    <div class="pain-items">
+                        <div class="pain-item">
+                            <div class="pain-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <line x1="15" y1="9" x2="9" y2="15" />
+                                    <line x1="9" y1="9" x2="15" y2="15" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Aceita a primeira proposta</h4>
+                                <p>Sem conhecer as alternativas, o produtor fecha o que o gerente oferece &mdash; quase
+                                    sempre desfavorável.</p>
+                            </div>
+                        </div>
+                        <div class="pain-item">
+                            <div class="pain-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Juros acima do permitido</h4>
+                                <p>Muitos contratos tem taxas que extrapolam os limites legais. Sem análise, você nem
+                                    percebe.</p>
+                            </div>
+                        </div>
+                        <div class="pain-item">
+                            <div class="pain-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                    <polyline points="14 2 14 8 20 8" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Não analisa a capacidade de pagamento</h4>
+                                <p>Assina parcelas que não cabem no fluxo da propriedade e cai num ciclo de
+                                    inadimplência.</p>
+                            </div>
+                        </div>
+                        <div class="pain-item">
+                            <div class="pain-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+                                    <line x1="12" y1="9" x2="12" y2="13" />
+                                    <line x1="12" y1="17" x2="12.01" y2="17" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Renegociação que vira bola de neve</h4>
+                                <p>O que era pra resolver, acaba criando uma dívida ainda maior e mais difícil de
+                                    controlar.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- METODO RM - 5 FASES -->
+    <section class="metodo" id="metodo">
+        <div class="container">
+            <div class="section-label">Como funciona</div>
+            <h2 class="section-title">Um método estruturado que protege seu negócio rural</h2>
+            <p class="section-subtitle">5 fases, do diagnóstico ao acompanhamento</p>
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-number">1</div>
+                    <div class="timeline-content">
+                        <h3>Diagnóstico técnico</h3>
+                        <p>Analisamos a propriedade, os contratos e toda a operação financeira rural. Entendemos sua
+                            realidade antes de propor qualquer ação.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-number">2</div>
+                    <div class="timeline-content">
+                        <h3>Análise da capacidade de pagamento</h3>
+                        <p>Calculamos quanto você realmente pode pagar, respeitando o fluxo da sua produção e as
+                            necessidades da propriedade.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-number">3</div>
+                    <div class="timeline-content">
+                        <h3>Parecer estratégico</h3>
+                        <p>Com base no diagnóstico, elaboramos um parecer com as melhores alternativas: renegociação,
+                            prorrogação ou alongamento.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-number">4</div>
+                    <div class="timeline-content">
+                        <h3>Reorganização financeira e negocial</h3>
+                        <p>Colocamos o plano em prática. Negociamos diretamente com o banco, com dados concretos e
+                            estratégia definida.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-number">5</div>
+                    <div class="timeline-content">
+                        <h3>Acompanhamento posterior</h3>
+                        <p>Não te deixamos sozinho depois da reorganização. Acompanhamos o cumprimento dos novos termos
+                            e ajustamos o que for necessário.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESULTADOS -->
+    <section class="resultados" id="resultados">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <div class="section-label">Resultados</div>
+                <h2 class="section-title">O que voce ganha com o Método RM</h2>
+            </div>
+            <div class="results-grid">
+                <div class="result-card fade-in">
+                    <div class="result-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        </svg>
+                    </div>
+                    <h4>Proteção contra renegociações abusivas</h4>
+                    <p>Você vai ao banco preparado, com dados e respaldo tecnico para não aceitar propostas
+                        desfavoraveis.</p>
+                </div>
+                <div class="result-card fade-in">
+                    <div class="result-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                            <circle cx="12" cy="12" r="3" />
+                        </svg>
+                    </div>
+                    <h4>Visão real da situação financeira</h4>
+                    <p>Entenda exatamente onde voce está e quais sao as suas opções reais, sem surpresas.</p>
+                </div>
+                <div class="result-card fade-in">
+                    <div class="result-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                            <polyline points="14 2 14 8 20 8" />
+                            <line x1="16" y1="13" x2="8" y2="13" />
+                            <line x1="16" y1="17" x2="8" y2="17" />
+                            <polyline points="10 9 9 9 8 9" />
+                        </svg>
+                    </div>
+                    <h4>Plano de ação concreto e personalizado</h4>
+                    <p>Nada genérico. Cada plano é feito sob medida para a realidade da sua propriedade.</p>
+                </div>
+                <div class="result-card fade-in">
+                    <div class="result-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="1" x2="12" y2="23" />
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                        </svg>
+                    </div>
+                    <h4>Economia real no passivo</h4>
+                    <p>Redução efetiva do que voce deve, com negociações baseadas em análise técnica e jurídica.</p>
+                </div>
+                <div class="result-card fade-in">
+                    <div class="result-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                            <polyline points="9 22 9 12 15 12 15 22" />
+                        </svg>
+                    </div>
+                    <h4>Continuidade da operação</h4>
+                    <p>Voce não para de produzir. A reorganização respeita o ritmo da sua atividade rural.</p>
+                </div>
+                <div class="result-card fade-in">
+                    <div class="result-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                        </svg>
+                    </div>
+                    <h4>Acompanhamento contínuo</h4>
+                    <p>Depois da reorganização, seguimos ao seu lado para garantir que tudo funcione como planejado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIFERENCIAL -->
+    <section class="diferencial" id="diferencial">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <div class="section-label">Por que somos diferentes</div>
+                <h2 class="section-title">Compare e decida</h2>
+            </div>
+            <div class="compare-grid">
+                <div class="compare-card common fade-in">
+                    <div class="compare-label">Abordagem tradicional</div>
+                    <h3>Advogado comum</h3>
+                    <ul class="compare-list">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18" />
+                                <line x1="6" y1="6" x2="18" y2="18" />
+                            </svg>
+                            Resolve um contrato por vez
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18" />
+                                <line x1="6" y1="6" x2="18" y2="18" />
+                            </svg>
+                            Serviço pontual, sem continuidade
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18" />
+                                <line x1="6" y1="6" x2="18" y2="18" />
+                            </svg>
+                            Não olha para o cenário completo
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18" />
+                                <line x1="6" y1="6" x2="18" y2="18" />
+                            </svg>
+                            Sem analise financeira da propriedade
+                        </li>
+                    </ul>
+                </div>
+                <div class="compare-card rm fade-in">
+                    <div class="compare-label">Nossa abordagem</div>
+                    <h3>Método RM</h3>
+                    <ul class="compare-list">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            Olha para a propriedade inteira
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            5 fases estruturadas e claras
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            Acompanhamento contínuo pós-reorganização
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            Proteção de longo prazo para o seu negocio
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section class="sobre" id="sobre">
+        <div class="container">
+            <div class="sobre-grid">
+                <div class="sobre-text fade-in">
+                    <div class="section-label">Quem somos</div>
+                    <h2 class="section-title">Quem está por trás do Método RM</h2>
+                    <p>A <strong>Rockenbach & Mota</strong> e um escritório especializado em direito empresarial e
+                        agronegócio, baseado em Lagoa Formosa/MG.</p>
+                    <p>Conhecemos de perto a realidade do produtor rural da região. Nosso trabalho é feito com
+                        proximidade, respeito e metodo &mdash; porque sabemos que por trás de cada contrato existe uma
+                        familia e uma propriedade que precisam continuar produzindo.</p>
+                </div>
+                <div class="team-cards fade-in">
+                    <div class="team-card">
+                        <img src="assets/ramon.jpg" alt="Ramon - Sócio-fundador">
+                        <h4>Ramon</h4>
+                        <span>Sócio-fundador &middot; Advogado</span>
+                    </div>
+                    <div class="team-card">
+                        <img src="assets/nathalia.jpg" alt="Nathalia - Sócia-fundadora">
+                        <h4>Nathalia</h4>
+                        <span>Sócia-fundadora &middot; Advogada</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULARIO -->
+    <section class="formulario" id="formulario">
+        <div class="container">
+            <div class="form-wrapper">
+                <div class="form-text fade-in">
+                    <div class="section-label">Contato</div>
+                    <h2 class="section-title">Fale com a gente.<br>Ainda dá tempo.</h2>
+                    <p>Preencha o formulario abaixo e nossa equipe entra em contato para entender sua situacao. Sem
+                        compromisso.</p>
+                    <div class="form-trust">
+                        <div class="form-trust-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                            </svg>
+                            Sigilo profissional garantido
+                        </div>
+                        <div class="form-trust-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                            </svg>
+                            Retorno em até 24 horas
+                        </div>
+                        <div class="form-trust-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            Sem compromisso na primeira conversa
+                        </div>
+                    </div>
+                </div>
+                <div class="form-box fade-in">
+                    <form id="leadForm" onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label for="nome">Nome completo</label>
+                            <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefone">Telefone (WhatsApp)</label>
+                            <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cidade">Cidade</label>
+                            <input type="text" id="cidade" name="cidade" placeholder="Sua cidade" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="banco">Qual banco é o financiamento?</label>
+                            <input type="text" id="banco" name="banco" placeholder="Ex: Banco do Brasil, Sicoob...">
+                        </div>
+                        <div class="form-group">
+                            <label for="divida">Valor aproximado da divida</label>
+                            <select id="divida" name="divida">
+                                <option value="" disabled selected>Selecione uma faixa</option>
+                                <option value="ate100">Até R$ 100 mil</option>
+                                <option value="100a500">R$ 100 mil a R$ 500 mil</option>
+                                <option value="500a1m">R$ 500 mil a R$ 1 milhão</option>
+                                <option value="acima1m">Acima de R$ 1 milhão</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="form-submit">Quero proteger meu negócio</button>
+                        <p class="form-disclaimer">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                            </svg>
+                            Suas informações são confidenciais e protegidas por sigilo profissional.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="assets/PNG DOURADO.png" alt="Rockenbach & Mota">
+                    </div>
+                    <p>Escritorio especializado em direito empresarial e agronegócio. Protegendo o produtor rural com
+                        metodo, proximidade e respeito.</p>
+                </div>
+                <div>
+                    <h5>Navegação</h5>
+                    <ul class="footer-links">
+                        <li><a href="#hero">Início</a></li>
+                        <li><a href="#metodo">Método RM</a></li>
+                        <li><a href="#resultados">Resultados</a></li>
+                        <li><a href="#sobre">Quem somos</a></li>
+                        <li><a href="#formulario">Contato</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Contato</h5>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                        R. Mário José do Nascimento, 275, Novo Horizonte, Lagoa Formosa/MG
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                        </svg>
+                        (34) 3824-2165
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Rockenbach & Mota Sociedade de Advogados. Todos os direitos reservados.</span>
+                <span>OAB/MG</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FLOAT -->
+    <a href="https://wa.me/5500000000000?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20M%C3%A9todo%20RM."
+        class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco pelo WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+    </a>
+
+    <!-- SCRIPTS -->
+    <script>
+        // Countdown Timer
+        const targetDate = new Date("April 30, 2026 23:59:59").getTime();
+        const countdownInterval = setInterval(function () {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance < 0) {
+                clearInterval(countdownInterval);
+                const cdElem = document.getElementById("heroCountdown");
+                if (cdElem) cdElem.innerHTML = "<span style='font-size: 1rem;'>PRAZO ENCERRADO</span>";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            const dElem = document.getElementById("cd-dias");
+            if (dElem) {
+                dElem.textContent = days.toString().padStart(2, '0');
+                document.getElementById("cd-horas").textContent = hours.toString().padStart(2, '0');
+                document.getElementById("cd-minutos").textContent = minutes.toString().padStart(2, '0');
+                document.getElementById("cd-segundos").textContent = seconds.toString().padStart(2, '0');
+            }
+        }, 1000);
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Fade-in on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Phone mask
+        document.getElementById('telefone').addEventListener('input', function (e) {
+            let v = e.target.value.replace(/\D/g, '');
+            if (v.length > 11) v = v.slice(0, 11);
+            if (v.length > 6) v = `(${v.slice(0, 2)}) ${v.slice(2, 7)}-${v.slice(7)}`;
+            else if (v.length > 2) v = `(${v.slice(0, 2)}) ${v.slice(2)}`;
+            else if (v.length > 0) v = `(${v}`;
+            e.target.value = v;
+        });
+
+        // Form submit
+        function handleSubmit(e) {
+            e.preventDefault();
+            const form = e.target;
+            const nome = form.nome.value;
+            const telefone = form.telefone.value;
+            const cidade = form.cidade.value;
+            const banco = form.banco.value;
+            const divida = form.divida.value;
+
+            // Build WhatsApp message
+            let msg = `Olá, vim pelo site do Método RM.%0A%0A`;
+            msg += `*Nome:* ${nome}%0A`;
+            msg += `*Telefone:* ${telefone}%0A`;
+            msg += `*Cidade:* ${cidade}%0A`;
+            if (banco) msg += `*Banco:* ${banco}%0A`;
+            if (divida) msg += `*Faixa da dívida:* ${divida}%0A`;
+
+            // Replace with real WhatsApp number
+            window.open(`https://wa.me/5500000000000?text=${msg}`, '_blank');
+
+            // Show success
+            form.innerHTML = `
+                <div style="text-align:center; padding: 40px 0;">
+                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#2E7D4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    <h3 style="font-family:'Tenor Sans',serif; color: white; margin-top: 20px; font-size: 1.3rem;">Mensagem enviada!</h3>
+                    <p style="color: rgba(255,255,255,0.7); margin-top: 8px; font-size: 0.9rem;">Entraremos em contato em breve.</p>
+                </div>
+            `;
+        }
+    </script>
+</body>
+
+</html>
