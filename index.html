@@ -803,15 +803,28 @@
         }
 
         .form-wrapper {
-            display: flex;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
             position: relative;
             z-index: 2;
         }
 
+        .form-text .section-label {
+            color: var(--gold);
+        }
+
+        .form-text .section-title {
+            color: var(--white);
+        }
+
+        .form-text p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1rem;
+        }
+
         .form-box {
-            width: 100%;
-            max-width: 600px;
             background: rgba(255, 255, 255, 0.06);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 20px;
@@ -1030,7 +1043,8 @@
         @media (max-width: 992px) {
 
             .pain-grid,
-            .sobre-grid {
+            .sobre-grid,
+            .form-wrapper {
                 grid-template-columns: 1fr;
             }
 
@@ -1438,6 +1452,9 @@
                         <h3>Método RM</h3>
                     </div>
                 </div>
+                <p style="color: rgba(255,255,255,0.6); font-size: 0.95rem; margin-bottom: 32px; line-height: 1.7;">
+                    Não resolvemos apenas um contrato. Analisamos a situação completa do produtor rural — da capacidade financeira à estrutura da dívida — e atuamos com método em cada etapa da negociação.
+                </p>
                 <ul class="compare-list">
                     <li>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -1516,11 +1533,12 @@
     <!-- FORMULARIO -->
     <section class="formulario" id="formulario">
         <div class="container">
-            <div style="text-align: center; margin-bottom: 48px;">
-                <div class="section-label" style="color: var(--gold);">Contato</div>
-                <h2 class="section-title" style="color: var(--white);">Inicie a análise da sua situação</h2>
-            </div>
             <div class="form-wrapper">
+                <div class="form-text fade-in">
+                    <div class="section-label">Contato</div>
+                    <h2 class="section-title">Inicie a análise da situação da dívida rural</h2>
+                    <p>Entenda antes do vencimento. Preencha o formulário ao lado e entre em contato.</p>
+                </div>
                 <div class="form-box fade-in">
                     <form id="leadForm" onsubmit="handleSubmit(event)">
                         <div class="form-group">
