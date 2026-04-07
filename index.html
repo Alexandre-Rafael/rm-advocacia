@@ -653,85 +653,70 @@
             color: var(--navy-dark);
         }
 
-        .compare-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 32px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .compare-card {
-            border-radius: 20px;
-            padding: 40px 32px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .compare-card.common {
-            background: #f0f2f5;
-            border: 1px solid #dde1e6;
-        }
-
-        .compare-card.rm {
+        .diferencial-card {
             background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
             color: var(--white);
             border: 2px solid var(--gold);
+            border-radius: 24px;
+            padding: 56px 48px;
+            max-width: 820px;
+            margin: 0 auto;
         }
 
-        .compare-card.rm::before {
-            content: 'RECOMENDADO';
-            position: absolute;
-            top: 16px;
-            right: -30px;
-            background: var(--gold);
-            color: var(--navy-dark);
-            padding: 4px 40px;
-            font-size: 0.65rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            transform: rotate(45deg);
+        .diferencial-card-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 40px;
         }
 
-        .compare-label {
-            font-family: 'Poppins', sans-serif;
+        .diferencial-card-label {
             font-size: 0.7rem;
             font-weight: 600;
             letter-spacing: 2px;
             text-transform: uppercase;
-            margin-bottom: 8px;
-        }
-
-        .compare-card.common .compare-label {
-            color: #8a95a3;
-        }
-
-        .compare-card.rm .compare-label {
             color: var(--gold);
+            margin-bottom: 6px;
         }
 
-        .compare-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 24px;
+        .diferencial-card-header h3 {
+            font-size: 1.8rem;
+            color: var(--gold);
+            margin: 0;
         }
 
-        .compare-card.rm h3 {
+        .diferencial-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(222, 198, 134, 0.12);
+            border: 1px solid rgba(222, 198, 134, 0.3);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .diferencial-icon svg {
+            width: 28px;
+            height: 28px;
             color: var(--gold);
         }
 
         .compare-list {
             list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px 40px;
         }
 
         .compare-list li {
             display: flex;
             align-items: flex-start;
             gap: 12px;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             line-height: 1.6;
+            color: rgba(255,255,255,0.85);
         }
 
         .compare-list li svg {
@@ -739,13 +724,6 @@
             width: 20px;
             height: 20px;
             margin-top: 2px;
-        }
-
-        .compare-card.common .compare-list li svg {
-            color: #c0c7d0;
-        }
-
-        .compare-card.rm .compare-list li svg {
             color: var(--gold);
         }
 
@@ -825,50 +803,15 @@
         }
 
         .form-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
+            display: flex;
+            justify-content: center;
             position: relative;
             z-index: 2;
         }
 
-        .form-text .section-label {
-            color: var(--gold);
-        }
-
-        .form-text .section-title {
-            color: var(--white);
-        }
-
-        .form-text p {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 1rem;
-            margin-bottom: 24px;
-        }
-
-        .form-trust {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .form-trust-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .form-trust-item svg {
-            width: 18px;
-            height: 18px;
-            color: var(--gold);
-            flex-shrink: 0;
-        }
-
         .form-box {
+            width: 100%;
+            max-width: 600px;
             background: rgba(255, 255, 255, 0.06);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 20px;
@@ -1087,9 +1030,7 @@
         @media (max-width: 992px) {
 
             .pain-grid,
-            .sobre-grid,
-            .form-wrapper,
-            .compare-grid {
+            .sobre-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -1173,8 +1114,12 @@
                 padding: 28px 20px;
             }
 
-            .compare-card {
+            .diferencial-card {
                 padding: 32px 24px;
+            }
+
+            .compare-list {
+                grid-template-columns: 1fr;
             }
 
             .footer-bottom {
@@ -1479,95 +1424,58 @@
         <div class="container">
             <div style="text-align: center; margin-bottom: 60px;">
                 <div class="section-label">Por que somos diferentes</div>
-                <h2 class="section-title">Compare e decida</h2>
+                <h2 class="section-title">Nossa abordagem</h2>
             </div>
-            <div class="compare-grid">
-                <div class="compare-card common fade-in">
-                    <div class="compare-label">Abordagem tradicional</div>
-                    <h3>Advogado comum</h3>
-                    <ul class="compare-list">
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="18" y1="6" x2="6" y2="18" />
-                                <line x1="6" y1="6" x2="18" y2="18" />
-                            </svg>
-                            Resolve um contrato por vez
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="18" y1="6" x2="6" y2="18" />
-                                <line x1="6" y1="6" x2="18" y2="18" />
-                            </svg>
-                            Serviço pontual, sem continuidade
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="18" y1="6" x2="6" y2="18" />
-                                <line x1="6" y1="6" x2="18" y2="18" />
-                            </svg>
-                            Não olha para o cenário completo
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="18" y1="6" x2="6" y2="18" />
-                                <line x1="6" y1="6" x2="18" y2="18" />
-                            </svg>
-                            Sem analise financeira da propriedade
-                        </li>
-                    </ul>
+            <div class="diferencial-card fade-in">
+                <div class="diferencial-card-header">
+                    <div class="diferencial-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="diferencial-card-label">Nossa abordagem</div>
+                        <h3>Método RM</h3>
+                    </div>
                 </div>
-                <div class="compare-card rm fade-in">
-                    <div class="compare-label">Nossa abordagem</div>
-                    <h3>Método RM</h3>
-                    <ul class="compare-list">
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            Entendimento completo da atividade rural
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            Diagnóstico completo da situação
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            Análise da capacidade financeira da atividade
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            Estruturação das alternativas de condução da dívida
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            Atuação técnica nas tratativas com instituições financeiras
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            Acompanhamento após a reorganização
-                        </li>
-                    </ul>
-                </div>
+                <ul class="compare-list">
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        Entendimento completo da atividade rural
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        Diagnóstico completo da situação
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        Análise da capacidade financeira da atividade
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        Estruturação das alternativas de condução da dívida
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        Atuação técnica nas tratativas com instituições financeiras
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        Acompanhamento após a reorganização
+                    </li>
+                </ul>
             </div>
         </div>
     </section>
@@ -1608,36 +1516,11 @@
     <!-- FORMULARIO -->
     <section class="formulario" id="formulario">
         <div class="container">
+            <div style="text-align: center; margin-bottom: 48px;">
+                <div class="section-label" style="color: var(--gold);">Contato</div>
+                <h2 class="section-title" style="color: var(--white);">Inicie a análise da sua situação</h2>
+            </div>
             <div class="form-wrapper">
-                <div class="form-text fade-in">
-                    <div class="section-label">Contato</div>
-                    <h2 class="section-title">Inicie a análise da situação da dívida rural</h2>
-                    <p>Entenda antes do vencimento. Preencha o formulário abaixo e entre em contato.</p>
-                    <div class="form-trust">
-                        <div class="form-trust-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                            </svg>
-                            Sigilo profissional garantido
-                        </div>
-                        <div class="form-trust-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10" />
-                                <polyline points="12 6 12 12 16 14" />
-                            </svg>
-                            Retorno em até 24 horas
-                        </div>
-                        <div class="form-trust-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            Sem compromisso na primeira conversa
-                        </div>
-                    </div>
-                </div>
                 <div class="form-box fade-in">
                     <form id="leadForm" onsubmit="handleSubmit(event)">
                         <div class="form-group">
