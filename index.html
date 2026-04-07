@@ -9,9 +9,7 @@
         content="Seu contrato de financiamento rural vence em abril? O Método RM protege seu negócio com diagnóstico, reorganização e acompanhamento. Fale com um especialista.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         /* ===== RESET & BASE ===== */
         *,
@@ -27,9 +25,11 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            color: #2A3A4C;
-            background: #FAF7F0;
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            color: #ffffff;
+            background: #0f1e1e;
             line-height: 1.7;
             overflow-x: hidden;
         }
@@ -46,14 +46,15 @@
 
         /* ===== VARIABLES ===== */
         :root {
-            --navy: #2A3A4C;
-            --navy-dark: #1C2836;
-            --gold: #DEC686;
-            --gold-pale: #F8F0DC;
-            --green: #2E7D4F;
-            --green-pale: #E6F3EB;
-            --cream: #FAF7F0;
+            --navy: #0f1e1e;
+            --navy-dark: #0f1e1e;
+            --gold: #c5a44e;
+            --gold-pale: rgba(197, 164, 78, 0.08);
+            --green: #2d8a4e;
+            --green-pale: #e6f3eb;
+            --cream: #F4F6F5;
             --white: #FFFFFF;
+            --text-highlight: #4db872;
         }
 
         /* ===== TYPOGRAPHY ===== */
@@ -61,8 +62,8 @@
         h2,
         h3,
         h4 {
-            font-family: 'Tenor Sans', serif;
-            font-weight: 400;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
             line-height: 1.2;
         }
 
@@ -134,28 +135,23 @@
             padding-top: 80px;
         }
 
-        .hero::before {
-            content: '';
+        .hero-video {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('assets/bg-hero.jpg');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: 60% bottom;
+            object-fit: cover;
             z-index: 0;
         }
 
-        .hero::after {
-            content: '';
+        .hero-overlay {
             position: absolute;
             top: 0;
             left: 0;
-            width: 65%;
+            width: 100%;
             height: 100%;
-            background: linear-gradient(to right, rgba(28, 40, 54, 1) 0%, rgba(28, 40, 54, 0.98) 40%, rgba(28, 40, 54, 0.7) 75%, transparent 100%);
+            background: linear-gradient(135deg, rgba(15, 30, 30, 0.85) 0%, rgba(15, 30, 30, 0.70) 40%, rgba(15, 30, 30, 0.40) 70%, rgba(15, 30, 30, 0.20) 100%);
             z-index: 1;
         }
 
@@ -199,12 +195,16 @@
         .hero h1 {
             font-size: clamp(2.2rem, 5vw, 3.5rem);
             color: var(--white);
-            max-width: 550px;
+            max-width: 600px;
             margin-bottom: 24px;
+            font-weight: 400;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
         }
 
         .hero h1 strong {
-            color: var(--gold);
+            color: var(--text-highlight);
+            font-weight: 500;
         }
 
         .hero-sub {
@@ -286,59 +286,86 @@
         .countdown-timer {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 8px;
             font-family: 'Tenor Sans', serif;
             font-size: 1.4rem;
             line-height: 1;
-            color: var(--gold);
+            color: var(--white);
         }
 
         .countdown-item {
             display: flex;
             flex-direction: column;
             align-items: center;
-            min-width: 40px;
+            justify-content: center;
+            min-width: 48px;
+            background: rgba(46, 125, 79, 0.6);
+            border: 1px solid rgba(222, 198, 134, 0.3);
+            border-radius: 8px;
+            padding: 8px 6px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            animation: pulse-border 2s infinite ease-in-out;
+        }
+
+        @keyframes pulse-border {
+            0% {
+                box-shadow: 0 0 0 0 rgba(222, 198, 134, 0.3);
+            }
+
+            70% {
+                box-shadow: 0 0 0 6px rgba(222, 198, 134, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(222, 198, 134, 0);
+            }
+        }
+
+        .countdown-item strong {
+            color: var(--gold);
         }
 
         .countdown-item span {
-            font-size: 0.65rem;
+            font-size: 0.6rem;
             font-family: 'Poppins', sans-serif;
             font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: rgba(255, 255, 255, 0.6);
+            color: rgba(255, 255, 255, 0.8);
             margin-top: 4px;
         }
 
         .countdown-sep {
             margin-top: -14px;
-            font-weight: 300;
-            opacity: 0.5;
+            font-weight: 600;
+            color: var(--gold);
+            opacity: 0.8;
+            font-size: 1.6rem;
         }
 
         .hero-scroll {
             position: absolute;
-            bottom: 40px;
+            bottom: 24px;
             left: 50%;
             transform: translateX(-50%);
-            width: 50px;
-            height: 50px;
-            border: 2px solid rgba(222, 198, 134, 0.4);
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            animation: bounce 2s infinite;
+            animation: gentle-bounce 2s ease-in-out infinite;
             z-index: 2;
         }
 
         .hero-scroll svg {
             width: 20px;
             height: 20px;
-            color: var(--gold);
+            color: rgba(255, 255, 255, 0.5);
         }
 
-        @keyframes bounce {
+        @keyframes gentle-bounce {
 
             0%,
             100% {
@@ -346,7 +373,7 @@
             }
 
             50% {
-                transform: translateX(-50%) translateY(8px);
+                transform: translateX(-50%) translateY(4px);
             }
         }
 
@@ -381,6 +408,7 @@
         /* ===== PAIN SECTION ===== */
         .pain {
             background: var(--white);
+            color: var(--navy-dark);
         }
 
         .pain-grid {
@@ -495,8 +523,8 @@
             content: '';
             position: absolute;
             left: 30px;
-            top: 0;
-            bottom: 0;
+            top: 32px;
+            bottom: 32px;
             width: 2px;
             background: linear-gradient(to bottom, var(--gold), var(--green));
         }
@@ -507,6 +535,19 @@
             align-items: flex-start;
             padding: 32px 0;
             position: relative;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: default;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(12px);
+        }
+
+        .timeline-item:hover .timeline-number {
+            transform: scale(1.15) rotate(5deg);
+            box-shadow: 0 8px 25px rgba(222, 198, 134, 0.5);
+            background: linear-gradient(135deg, #fff, var(--gold));
+            color: var(--navy-dark);
         }
 
         .timeline-number {
@@ -524,12 +565,23 @@
             position: relative;
             z-index: 2;
             box-shadow: 0 4px 20px rgba(222, 198, 134, 0.3);
+            transition: all 0.4s ease;
+        }
+
+        .timeline-content {
+            transition: color 0.3s ease;
+        }
+
+        .timeline-item:hover .timeline-content h3 {
+            color: #fff;
+            text-shadow: 0 0 10px rgba(222, 198, 134, 0.3);
         }
 
         .timeline-content h3 {
             font-size: 1.2rem;
             margin-bottom: 8px;
             color: var(--gold);
+            transition: all 0.3s ease;
         }
 
         .timeline-content p {
@@ -541,6 +593,7 @@
         /* ===== RESULTADOS SECTION ===== */
         .resultados {
             background: var(--cream);
+            color: var(--navy-dark);
         }
 
         .results-grid {
@@ -595,6 +648,7 @@
         /* ===== DIFERENCIAL SECTION ===== */
         .diferencial {
             background: var(--white);
+            color: var(--navy-dark);
         }
 
         .compare-grid {
@@ -696,6 +750,7 @@
         /* ===== SOBRE SECTION ===== */
         .sobre {
             background: var(--cream);
+            color: var(--navy-dark);
         }
 
         .sobre-grid {
@@ -896,7 +951,7 @@
 
         /* ===== FOOTER ===== */
         .footer {
-            background: var(--navy-dark);
+            background: #000000;
             color: rgba(255, 255, 255, 0.6);
             padding: 60px 0 30px;
         }
@@ -1068,15 +1123,7 @@
                 min-height: 100svh;
             }
 
-            .hero::before {
-                background: url('assets/bg-hero-mobile.jpg') 20% bottom / cover no-repeat;
-            }
 
-            .hero::after {
-                width: 100%;
-                height: 70%;
-                background: linear-gradient(to bottom, rgba(28, 40, 54, 0.97) 0%, rgba(28, 40, 54, 0.93) 50%, rgba(28, 40, 54, 0.6) 75%, rgba(28, 40, 54, 0.1) 92%, transparent 100%);
-            }
 
             .hero-content {
                 padding: 40px 0 0;
@@ -1162,56 +1209,42 @@
 
     <!-- HERO -->
     <section class="hero" id="hero">
+        <video class="hero-video" autoplay loop muted playsinline poster="assets/bg-1.jpg">
+            <source src="assets/bgvideo.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
         <div class="container">
             <div class="hero-content">
                 <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-bottom: 32px;">
                     <div class="hero-badge" style="margin-bottom: 0;">MÉTODO <span>RM</span></div>
-                    <div class="hero-urgency" style="flex-direction: row; padding: 6px 14px; gap: 12px; background: rgba(0,0,0,0.15); border: 1px solid rgba(222,198,134,0.15);">
-                        <div class="hero-urgency-header" style="font-size: 0.65rem;">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10" />
-                                <polyline points="12 6 12 12 16 14" />
-                            </svg>
-                            <span>Prazo Final em:</span>
-                        </div>
-                        <div class="countdown-timer" id="heroCountdown" style="font-size: 1.1rem; gap: 8px;">
-                            <div class="countdown-item">
-                                <strong id="cd-dias">00</strong>
-                                <span style="font-size: 0.55rem; margin-top: 2px;">Dias</span>
-                            </div>
-                            <div class="countdown-sep" style="margin-top: -10px;">:</div>
-                            <div class="countdown-item">
-                                <strong id="cd-horas">00</strong>
-                                <span style="font-size: 0.55rem; margin-top: 2px;">Hrs</span>
-                            </div>
-                            <div class="countdown-sep" style="margin-top: -10px;">:</div>
-                            <div class="countdown-item">
-                                <strong id="cd-minutos">00</strong>
-                                <span style="font-size: 0.55rem; margin-top: 2px;">Min</span>
-                            </div>
-                            <div class="countdown-sep" style="margin-top: -10px;">:</div>
-                            <div class="countdown-item">
-                                <strong id="cd-segundos">00</strong>
-                                <span style="font-size: 0.55rem; margin-top: 2px;">Seg</span>
-                            </div>
-                        </div>
+                    <div class="hero-urgency"
+                        style="flex-direction: row; padding: 10px 18px; align-items: center; gap: 8px; background: rgba(0,0,0,0.2); border: 1px solid rgba(222,198,134,0.25);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px;">
+                            <circle cx="12" cy="12" r="10" />
+                            <line x1="12" y1="8" x2="12" y2="12" />
+                            <line x1="12" y1="16" x2="12.01" y2="16" />
+                        </svg>
+                        <span style="font-weight: 500; font-size: 0.95rem;">Seu contrato rural vence em 30 de
+                            abril?</span>
                     </div>
                 </div>
-                <h1>Não aceite juros abusivos na renovação da sua <strong>dívida rural.</strong></h1>
+                <h1>É importante analisar as condições antes da <strong>renovação.</strong></h1>
                 <p class="hero-sub"
                     style="color: var(--white); font-weight: 500; font-size: clamp(1.1rem, 2vw, 1.25rem); margin-bottom: 16px;">
-                    Renegociar direto com o gerente é o caminho mais rápido para perder dinheiro e travar sua produção.
+                    A reorganização da dívida rural começa com análise técnica.
                 </p>
-                <p class="hero-sub" style="font-size: 0.95rem;">Nós diagnosticamos possíveis cobranças indevidas e
-                    assumimos a linha de frente com o banco por você.</p>
+                <p class="hero-sub" style="font-size: 0.95rem;">Antes de qualquer renegociação, é isso que precisa ser
+                    feito: entender a situação real, organizar as informações e definir a melhor forma de conduzir a
+                    dívida. A partir da análise técnica das cobranças, orientamos a condução das negociações junto às
+                    instituições financeiras.</p>
                 <div class="hero-actions">
                     <a href="#formulario" class="btn-primary">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" style="width: 20px; height: 20px;">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                         </svg>
-                        Quero blindar meu financeiro
+                        Quero saber mais
                     </a>
                 </div>
             </div>
@@ -1246,8 +1279,8 @@
                             </div>
                             <div>
                                 <h4>Aceita a primeira proposta</h4>
-                                <p>Sem conhecer as alternativas, o produtor fecha o que o gerente oferece &mdash; quase
-                                    sempre desfavorável.</p>
+                                <p>Sem análise técnica, decisões são tomadas com base apenas no que é apresentado pelo
+                                    banco.</p>
                             </div>
                         </div>
                         <div class="pain-item">
@@ -1258,9 +1291,9 @@
                                 </svg>
                             </div>
                             <div>
-                                <h4>Juros acima do permitido</h4>
-                                <p>Muitos contratos tem taxas que extrapolam os limites legais. Sem análise, você nem
-                                    percebe.</p>
+                                <h4>Condições financeiras desfavoráveis</h4>
+                                <p>Contratos podem conter encargos e estruturas que impactam diretamente o custo da
+                                    operação.</p>
                             </div>
                         </div>
                         <div class="pain-item">
@@ -1288,9 +1321,9 @@
                                 </svg>
                             </div>
                             <div>
-                                <h4>Renegociação que vira bola de neve</h4>
-                                <p>O que era pra resolver, acaba criando uma dívida ainda maior e mais difícil de
-                                    controlar.</p>
+                                <h4>A dívida se torna mais complexa de controlar</h4>
+                                <p>Sem estrutura, a renegociação pode aumentar o endividamento e dificultar a gestão.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -1302,30 +1335,33 @@
     <!-- METODO RM - 5 FASES -->
     <section class="metodo" id="metodo">
         <div class="container">
-            <div class="section-label">Como funciona</div>
-            <h2 class="section-title">Um método estruturado que protege seu negócio rural</h2>
-            <p class="section-subtitle">5 fases, do diagnóstico ao acompanhamento</p>
+            <div
+                style="text-align: center; margin-bottom: 60px; display: flex; flex-direction: column; align-items: center;">
+                <div class="section-label">Como funciona</div>
+                <h2 class="section-title">Método RM: análise e condução estruturada da dívida rural</h2>
+                <p class="section-subtitle" style="margin-bottom: 0;">5 fases, do diagnóstico ao acompanhamento</p>
+            </div>
             <div class="timeline">
                 <div class="timeline-item fade-in">
                     <div class="timeline-number">1</div>
                     <div class="timeline-content">
-                        <h3>Diagnóstico técnico</h3>
-                        <p>Analisamos a propriedade, os contratos e toda a operação financeira rural. Entendemos sua
-                            realidade antes de propor qualquer ação.</p>
+                        <h3>Diagnóstico Técnico</h3>
+                        <p>Levantamento de contratos, garantias e obrigações, com compreensão integrada da operação
+                            financeira.</p>
                     </div>
                 </div>
                 <div class="timeline-item fade-in">
                     <div class="timeline-number">2</div>
                     <div class="timeline-content">
-                        <h3>Análise da capacidade de pagamento</h3>
-                        <p>Calculamos quanto você realmente pode pagar, respeitando o fluxo da sua produção e as
-                            necessidades da propriedade.</p>
+                        <h3>Análise da Capacidade de Pagamento</h3>
+                        <p>Levantamento de contratos, garantias e obrigações, com compreensão integrada da operação
+                            financeira.</p>
                     </div>
                 </div>
                 <div class="timeline-item fade-in">
                     <div class="timeline-number">3</div>
                     <div class="timeline-content">
-                        <h3>Parecer estratégico</h3>
+                        <h3>Parecer Estratégico</h3>
                         <p>Com base no diagnóstico, elaboramos um parecer com as melhores alternativas: renegociação,
                             prorrogação ou alongamento.</p>
                     </div>
@@ -1334,16 +1370,15 @@
                     <div class="timeline-number">4</div>
                     <div class="timeline-content">
                         <h3>Reorganização financeira e negocial</h3>
-                        <p>Colocamos o plano em prática. Negociamos diretamente com o banco, com dados concretos e
-                            estratégia definida.</p>
+                        <p>Estruturação e condução das negociações junto às instituições financeiras com base na
+                            estratégia definida e nos dados levantados.</p>
                     </div>
                 </div>
                 <div class="timeline-item fade-in">
                     <div class="timeline-number">5</div>
                     <div class="timeline-content">
                         <h3>Acompanhamento posterior</h3>
-                        <p>Não te deixamos sozinho depois da reorganização. Acompanhamos o cumprimento dos novos termos
-                            e ajustamos o que for necessário.</p>
+                        <p>Monitoramento das condições pactuadas e adequação das medidas conforme necessário.</p>
                     </div>
                 </div>
             </div>
@@ -1355,7 +1390,7 @@
         <div class="container">
             <div style="text-align: center; margin-bottom: 60px;">
                 <div class="section-label">Resultados</div>
-                <h2 class="section-title">O que voce ganha com o Método RM</h2>
+                <h2 class="section-title">Resultados obtidos com a aplicação do Método RM</h2>
             </div>
             <div class="results-grid">
                 <div class="result-card fade-in">
@@ -1365,9 +1400,9 @@
                             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                         </svg>
                     </div>
-                    <h4>Proteção contra renegociações abusivas</h4>
-                    <p>Você vai ao banco preparado, com dados e respaldo tecnico para não aceitar propostas
-                        desfavoraveis.</p>
+                    <h4>Segurança na condução das renegociações</h4>
+                    <p>A análise técnica dos contratos e das condições permite conduzir negociações com maior
+                        previsibilidade e consistência.</p>
                 </div>
                 <div class="result-card fade-in">
                     <div class="result-icon">
@@ -1377,8 +1412,9 @@
                             <circle cx="12" cy="12" r="3" />
                         </svg>
                     </div>
-                    <h4>Visão real da situação financeira</h4>
-                    <p>Entenda exatamente onde voce está e quais sao as suas opções reais, sem surpresas.</p>
+                    <h4>Clareza sobre a estrutura financeira da operação</h4>
+                    <p>A compreensão detalhada das obrigações e encargos envolvidos possibilita decisões mais
+                        fundamentadas.</p>
                 </div>
                 <div class="result-card fade-in">
                     <div class="result-icon">
@@ -1391,8 +1427,8 @@
                             <polyline points="10 9 9 9 8 9" />
                         </svg>
                     </div>
-                    <h4>Plano de ação concreto e personalizado</h4>
-                    <p>Nada genérico. Cada plano é feito sob medida para a realidade da sua propriedade.</p>
+                    <h4>Estratégia jurídica e financeira definida e personalizada</h4>
+                    <p>A partir do diagnóstico, são estruturados caminhos viáveis para reorganização das obrigações.</p>
                 </div>
                 <div class="result-card fade-in">
                     <div class="result-icon">
@@ -1402,8 +1438,9 @@
                             <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
                         </svg>
                     </div>
-                    <h4>Economia real no passivo</h4>
-                    <p>Redução efetiva do que voce deve, com negociações baseadas em análise técnica e jurídica.</p>
+                    <h4>Reorganização técnica do passivo</h4>
+                    <p>A análise das operações permite ajustar a estrutura da dívida à realidade da atividade
+                        desenvolvida.</p>
                 </div>
                 <div class="result-card fade-in">
                     <div class="result-icon">
@@ -1413,8 +1450,9 @@
                             <polyline points="9 22 9 12 15 12 15 22" />
                         </svg>
                     </div>
-                    <h4>Continuidade da operação</h4>
-                    <p>Voce não para de produzir. A reorganização respeita o ritmo da sua atividade rural.</p>
+                    <h4>Alinhamento da dívida à capacidade da operação</h4>
+                    <p>A condução estruturada das obrigações contribui para a continuidade da atividade produtiva, com
+                        objetivo de reduzir o passivo.</p>
                 </div>
                 <div class="result-card fade-in">
                     <div class="result-icon">
@@ -1427,7 +1465,8 @@
                         </svg>
                     </div>
                     <h4>Acompanhamento contínuo</h4>
-                    <p>Depois da reorganização, seguimos ao seu lado para garantir que tudo funcione como planejado.</p>
+                    <p>A atuação se mantém após a implementação das medidas definidas, garantindo coerência na condução
+                        do processo.</p>
                 </div>
             </div>
         </div>
@@ -1488,28 +1527,42 @@
                                 stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="20 6 9 17 4 12" />
                             </svg>
-                            Olha para a propriedade inteira
+                            Entendimento completo da atividade rural
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="20 6 9 17 4 12" />
                             </svg>
-                            5 fases estruturadas e claras
+                            Diagnóstico completo da situação
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="20 6 9 17 4 12" />
                             </svg>
-                            Acompanhamento contínuo pós-reorganização
+                            Análise da capacidade financeira da atividade
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="20 6 9 17 4 12" />
                             </svg>
-                            Proteção de longo prazo para o seu negocio
+                            Estruturação das alternativas de condução da dívida
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            Atuação técnica nas tratativas com instituições financeiras
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            Acompanhamento após a reorganização
                         </li>
                     </ul>
                 </div>
@@ -1524,22 +1577,26 @@
                 <div class="sobre-text fade-in">
                     <div class="section-label">Quem somos</div>
                     <h2 class="section-title">Quem está por trás do Método RM</h2>
-                    <p>A <strong>Rockenbach & Mota</strong> e um escritório especializado em direito empresarial e
-                        agronegócio, baseado em Lagoa Formosa/MG.</p>
+                    <p>A <strong>Rockenbach & Mota</strong> é um escritório especializado em direito empresarial e
+                        agronegócio. Estamos situados em Lagoa Formosa/MG, mas atendemos todo o Brasil.</p>
                     <p>Conhecemos de perto a realidade do produtor rural da região. Nosso trabalho é feito com
-                        proximidade, respeito e metodo &mdash; porque sabemos que por trás de cada contrato existe uma
-                        familia e uma propriedade que precisam continuar produzindo.</p>
+                        proximidade, respeito e método, porque sabemos que por trás de cada contrato existe uma
+                        família e uma propriedade que precisam continuar produzindo.</p>
                 </div>
                 <div class="team-cards fade-in">
                     <div class="team-card">
-                        <img src="assets/ramon.jpg" alt="Ramon - Sócio-fundador">
-                        <h4>Ramon</h4>
-                        <span>Sócio-fundador &middot; Advogado</span>
+                        <img src="assets/ramon.jpg" alt="Ramon Rockenbach - Sócio-fundador">
+                        <h4>Ramon Rockenbach</h4>
+                        <span style="display:block; margin-bottom: 4px;">Sócio-fundador &middot; Advogado</span>
+                        <span style="display:block; font-size: 0.75rem; color: #5a6a7a; font-weight: 400;">OAB/RS 109092
+                            &middot; OAB/MG 244.993</span>
                     </div>
                     <div class="team-card">
-                        <img src="assets/nathalia.jpg" alt="Nathalia - Sócia-fundadora">
-                        <h4>Nathalia</h4>
-                        <span>Sócia-fundadora &middot; Advogada</span>
+                        <img src="assets/nathalia.jpg" alt="Nathalia Mota - Sócia-fundadora">
+                        <h4>Nathalia Mota</h4>
+                        <span style="display:block; margin-bottom: 4px;">Sócia-fundadora &middot; Advogada</span>
+                        <span style="display:block; font-size: 0.75rem; color: #5a6a7a; font-weight: 400;">OAB/MG
+                            238.601</span>
                     </div>
                 </div>
             </div>
@@ -1552,9 +1609,8 @@
             <div class="form-wrapper">
                 <div class="form-text fade-in">
                     <div class="section-label">Contato</div>
-                    <h2 class="section-title">Fale com a gente.<br>Ainda dá tempo.</h2>
-                    <p>Preencha o formulario abaixo e nossa equipe entra em contato para entender sua situacao. Sem
-                        compromisso.</p>
+                    <h2 class="section-title">Inicie a análise da situação da dívida rural</h2>
+                    <p>Entenda antes do vencimento. Preencha o formulário abaixo e entre em contato.</p>
                     <div class="form-trust">
                         <div class="form-trust-item">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -1595,17 +1651,17 @@
                             <input type="text" id="cidade" name="cidade" placeholder="Sua cidade" required>
                         </div>
                         <div class="form-group">
-                            <label for="banco">Qual banco é o financiamento?</label>
+                            <label for="banco">Instituição financeira do contrato</label>
                             <input type="text" id="banco" name="banco" placeholder="Ex: Banco do Brasil, Sicoob...">
                         </div>
                         <div class="form-group">
                             <label for="divida">Valor aproximado da divida</label>
                             <select id="divida" name="divida">
                                 <option value="" disabled selected>Selecione uma faixa</option>
-                                <option value="ate100">Até R$ 100 mil</option>
                                 <option value="100a500">R$ 100 mil a R$ 500 mil</option>
                                 <option value="500a1m">R$ 500 mil a R$ 1 milhão</option>
-                                <option value="acima1m">Acima de R$ 1 milhão</option>
+                                <option value="1ma5m">R$ 1 milhão a R$ 5 milhões</option>
+                                <option value="acima5m">Acima de R$ 5 milhões</option>
                             </select>
                         </div>
                         <button type="submit" class="form-submit">Quero proteger meu negócio</button>
@@ -1649,16 +1705,16 @@
                     <div class="footer-contact-item">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                             stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                            <circle cx="12" cy="10" r="3" />
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <polyline points="22,6 12,13 2,6" />
                         </svg>
-                        R. Mário José do Nascimento, 275, Novo Horizonte, Lagoa Formosa/MG
+                        contato@rockenbachemota.com.br
                     </div>
                     <div class="footer-contact-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
+                        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"
+                            style="width: 20px; height: 20px; margin-right: 12px; margin-top: 2px;">
                             <path
-                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                         </svg>
                         (34) 3824-2165
                     </div>
@@ -1682,32 +1738,7 @@
 
     <!-- SCRIPTS -->
     <script>
-        // Countdown Timer
-        const targetDate = new Date("April 30, 2026 23:59:59").getTime();
-        const countdownInterval = setInterval(function () {
-            const now = new Date().getTime();
-            const distance = targetDate - now;
 
-            if (distance < 0) {
-                clearInterval(countdownInterval);
-                const cdElem = document.getElementById("heroCountdown");
-                if (cdElem) cdElem.innerHTML = "<span style='font-size: 1rem;'>PRAZO ENCERRADO</span>";
-                return;
-            }
-
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            const dElem = document.getElementById("cd-dias");
-            if (dElem) {
-                dElem.textContent = days.toString().padStart(2, '0');
-                document.getElementById("cd-horas").textContent = hours.toString().padStart(2, '0');
-                document.getElementById("cd-minutos").textContent = minutes.toString().padStart(2, '0');
-                document.getElementById("cd-segundos").textContent = seconds.toString().padStart(2, '0');
-            }
-        }, 1000);
         // Navbar scroll effect
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
