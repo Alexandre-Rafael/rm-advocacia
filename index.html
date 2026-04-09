@@ -1681,16 +1681,45 @@
         });
 
         // Form submit
-        function handleSubmit(e) {
+        async function handleSubmit(e) {
             e.preventDefault();
             const form = e.target;
+            const submitBtn = form.querySelector('.form-submit');
+            const originalBtnText = submitBtn.innerText;
+            
+            // Show loading state
+            submitBtn.disabled = true;
+            submitBtn.innerText = 'Enviando...';
+
             const nome = form.nome.value;
             const telefone = form.telefone.value;
             const cidade = form.cidade.value;
             const banco = form.banco.value;
             const divida = form.divida.value;
 
-            // Build WhatsApp message
+            // 1. Send Email via FormSubmit (AJAX)
+            try {
+                await fetch("https://formsubmit.co/ajax/juridico@rmjuridico.com.br", {
+                    method: "POST",
+                    headers: { 
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        Nome: nome,
+                        Telefone: telefone,
+                        Cidade: cidade,
+                        Banco: banco,
+                        Divida: divida,
+                        "_subject": "Novo Lead - Método RM",
+                        "_cc": "agchadar@gmail.com"
+                    })
+                });
+            } catch (error) {
+                console.error("Erro ao enviar e-mail:", error);
+            }
+
+            // 2. Build WhatsApp message
             let msg = `Olá, vim pelo site do Método RM.%0A%0A`;
             msg += `*Nome:* ${nome}%0A`;
             msg += `*Telefone:* ${telefone}%0A`;
@@ -1698,15 +1727,15 @@
             if (banco) msg += `*Banco:* ${banco}%0A`;
             if (divida) msg += `*Faixa da dívida:* ${divida}%0A`;
 
-            // Replace with real WhatsApp number
+            // 3. Open WhatsApp
             window.open(`https://wa.me/5534999587061?text=${msg}`, '_blank');
 
-            // Show success
+            // 4. Show success state in the UI
             form.innerHTML = `
                 <div style="text-align:center; padding: 40px 0;">
                     <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#2E7D4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                    <h3 style="font-family:'Tenor Sans',serif; color: white; margin-top: 20px; font-size: 1.3rem;">Mensagem enviada!</h3>
-                    <p style="color: rgba(255,255,255,0.7); margin-top: 8px; font-size: 0.9rem;">Entraremos em contato em breve.</p>
+                    <h3 style="font-family:'Inter', sans-serif; color: white; margin-top: 20px; font-size: 1.3rem; font-weight: 600;">Mensagem enviada!</h3>
+                    <p style="color: rgba(255,255,255,0.7); margin-top: 8px; font-size: 0.9rem;">Já abrimos seu WhatsApp. Entraremos em contato em breve.</p>
                 </div>
             `;
         }
