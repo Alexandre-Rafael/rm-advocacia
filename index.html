@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Método RM | Rockenbach & Mota - Proteção para o Produtor Rural</title>
+    <title>Rockenbach & Mota | Advocacia Especializada em Agronegócio</title>
     <meta name="description"
-        content="O prazo de abril passou, mas ainda dá tempo de renegociar sua dívida rural. O Método RM protege seu negócio com diagnóstico, reorganização e acompanhamento. Fale com um especialista.">
+        content="Proteja sua terra, patrimônio e produção rural. Advocacia especializada em agronegócio: diagnóstico jurídico, renegociação de dívidas, contratos, holding rural e sucessão. Atendimento em todo o Brasil.">
 
     <!-- Meta Pixel Code -->
     <script>
@@ -30,20 +30,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="preload" as="image" href="assets/bg-1.jpg" fetchpriority="high">
-    <link rel="preload" as="video" href="assets/bgvideo.mp4" type="video/mp4" fetchpriority="high">
     <style>
         /* ===== RESET & BASE ===== */
-        *,
-        *::before,
-        *::after {
+        *, *::before, *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Inter', sans-serif;
@@ -55,15 +50,8 @@
             overflow-x: hidden;
         }
 
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+        img { max-width: 100%; display: block; }
+        a { text-decoration: none; color: inherit; }
 
         /* ===== VARIABLES ===== */
         :root {
@@ -79,10 +67,7 @@
         }
 
         /* ===== TYPOGRAPHY ===== */
-        h1,
-        h2,
-        h3,
-        h4 {
+        h1, h2, h3, h4 {
             font-family: 'Inter', sans-serif;
             font-weight: 500;
             line-height: 1.2;
@@ -94,55 +79,26 @@
             padding: 0 24px;
         }
 
-        /* ===== NAVBAR ===== */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            background: rgba(28, 40, 54, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 16px 0;
-            transition: padding 0.3s, box-shadow 0.3s;
+        /* ===== HERO LOGO ===== */
+        .hero-logo {
+            height: 72px;
+            margin-bottom: 36px;
+            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
         }
 
-        .navbar.scrolled {
-            padding: 10px 0;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+        /* ===== BUTTON PULSE ===== */
+        @keyframes btn-pulse {
+            0%, 100% { transform: scale(1);    box-shadow: 0 4px 20px rgba(46, 125, 79, 0.35); }
+            50%       { transform: scale(1.08); box-shadow: 0 6px 28px rgba(46, 125, 79, 0.6); }
         }
 
-        .navbar .container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+        .btn-primary, .btn-primary-dark, .btn-confianca, .wpp-cta-btn {
+            animation: btn-pulse 2s ease-in-out infinite;
         }
 
-        .navbar-logo img {
-            height: 42px;
-        }
-
-        .navbar-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--green);
-            color: var(--white);
-            padding: 10px 24px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            transition: background 0.3s, transform 0.3s;
-        }
-
-        .navbar-cta:hover {
-            background: #256b42;
-            transform: translateY(-1px);
-        }
-
-        .navbar-cta svg {
-            width: 18px;
-            height: 18px;
+        .btn-primary:hover, .btn-primary-dark:hover, .btn-confianca:hover, .wpp-cta-btn:hover {
+            animation-play-state: paused;
+            transform: translateY(-2px);
         }
 
         /* ===== HERO ===== */
@@ -152,27 +108,18 @@
             display: flex;
             align-items: center;
             background: var(--navy-dark);
+            background-image: url('assets/bg-1.jpg');
+            background-size: cover;
+            background-position: center top;
             overflow: hidden;
-            padding-top: 80px;
-        }
-
-        .hero-video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: 0;
+            padding-top: 0;
         }
 
         .hero-overlay {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(15, 30, 30, 0.85) 0%, rgba(15, 30, 30, 0.70) 40%, rgba(15, 30, 30, 0.40) 70%, rgba(15, 30, 30, 0.20) 100%);
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(15, 30, 30, 0.80);
             z-index: 1;
         }
 
@@ -186,61 +133,57 @@
             position: relative;
             z-index: 2;
             padding: 80px 0;
-            text-align: left;
+            text-align: center;
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
-            max-width: 550px;
+            align-items: center;
+            max-width: 820px;
+            margin: 0 auto;
         }
 
         .hero-badge {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(222, 198, 134, 0.15);
+            background: rgba(197, 164, 78, 0.15);
             border: 1px solid var(--gold);
             border-radius: 50px;
             padding: 8px 20px;
             margin-bottom: 32px;
-            font-family: 'Tenor Sans', serif;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             letter-spacing: 3px;
             color: var(--gold);
         }
 
-        .hero-badge span {
-            color: var(--gold);
-            font-weight: 700;
-        }
+        .hero-badge span { color: var(--gold); font-weight: 700; }
 
         .hero h1 {
-            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-size: clamp(2rem, 5vw, 3.2rem);
             color: var(--white);
-            max-width: 600px;
             margin-bottom: 24px;
             font-weight: 400;
-            line-height: 1.15;
+            line-height: 1.2;
             letter-spacing: -0.02em;
         }
 
         .hero h1 strong {
             color: var(--text-highlight);
-            font-weight: 500;
+            font-weight: 600;
         }
 
         .hero-sub {
-            font-size: clamp(1rem, 2vw, 1.15rem);
+            font-size: clamp(1rem, 2vw, 1.12rem);
             color: rgba(255, 255, 255, 0.85);
-            max-width: 480px;
+            max-width: 600px;
             margin-bottom: 40px;
             line-height: 1.8;
         }
 
         .hero-actions {
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
             align-items: center;
-            gap: 20px;
+            gap: 14px;
         }
 
         .btn-primary {
@@ -251,7 +194,6 @@
             color: var(--white);
             padding: 16px 36px;
             border-radius: 50px;
-            font-family: 'Poppins', sans-serif;
             font-size: 1rem;
             font-weight: 600;
             border: none;
@@ -266,102 +208,12 @@
             box-shadow: 0 6px 28px rgba(46, 125, 79, 0.45);
         }
 
-        .btn-primary svg {
-            width: 20px;
-            height: 20px;
-        }
+        .btn-primary svg { width: 20px; height: 20px; }
 
-        .hero-urgency {
-            display: inline-flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 8px;
-            background: rgba(222, 198, 134, 0.12);
-            border: 1px solid rgba(222, 198, 134, 0.3);
-            border-radius: 12px;
-            padding: 14px 20px;
-            color: var(--gold);
-        }
-
-        .hero-urgency-header {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .hero-urgency-header svg {
-            width: 16px;
-            height: 16px;
-            flex-shrink: 0;
-            color: var(--white);
-        }
-
-        .hero-urgency-header span {
-            color: var(--white);
-        }
-
-        .countdown-timer {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-family: 'Tenor Sans', serif;
-            font-size: 1.4rem;
-            line-height: 1;
-            color: var(--white);
-        }
-
-        .countdown-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-width: 48px;
-            background: rgba(46, 125, 79, 0.6);
-            border: 1px solid rgba(222, 198, 134, 0.3);
-            border-radius: 8px;
-            padding: 8px 6px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            animation: pulse-border 2s infinite ease-in-out;
-        }
-
-        @keyframes pulse-border {
-            0% {
-                box-shadow: 0 0 0 0 rgba(222, 198, 134, 0.3);
-            }
-
-            70% {
-                box-shadow: 0 0 0 6px rgba(222, 198, 134, 0);
-            }
-
-            100% {
-                box-shadow: 0 0 0 0 rgba(222, 198, 134, 0);
-            }
-        }
-
-        .countdown-item strong {
-            color: var(--gold);
-        }
-
-        .countdown-item span {
-            font-size: 0.6rem;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: rgba(255, 255, 255, 0.8);
-            margin-top: 4px;
-        }
-
-        .countdown-sep {
-            margin-top: -14px;
-            font-weight: 600;
-            color: var(--gold);
-            opacity: 0.8;
-            font-size: 1.6rem;
+        .hero-social-proof {
+            font-size: 0.82rem;
+            color: rgba(255, 255, 255, 0.6);
+            letter-spacing: 0.5px;
         }
 
         .hero-scroll {
@@ -369,8 +221,7 @@
             bottom: 24px;
             left: 50%;
             transform: translateX(-50%);
-            width: 40px;
-            height: 40px;
+            width: 40px; height: 40px;
             border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 50%;
             display: flex;
@@ -380,31 +231,17 @@
             z-index: 2;
         }
 
-        .hero-scroll svg {
-            width: 20px;
-            height: 20px;
-            color: rgba(255, 255, 255, 0.5);
-        }
+        .hero-scroll svg { width: 20px; height: 20px; color: rgba(255,255,255,0.5); }
 
         @keyframes gentle-bounce {
-
-            0%,
-            100% {
-                transform: translateX(-50%) translateY(0);
-            }
-
-            50% {
-                transform: translateX(-50%) translateY(4px);
-            }
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(4px); }
         }
 
         /* ===== SECTION GENERAL ===== */
-        section {
-            padding: 100px 0;
-        }
+        section { padding: 100px 0; }
 
         .section-label {
-            font-family: 'Poppins', sans-serif;
             font-size: 0.75rem;
             font-weight: 600;
             letter-spacing: 3px;
@@ -414,7 +251,7 @@
         }
 
         .section-title {
-            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
             color: var(--navy-dark);
             margin-bottom: 20px;
         }
@@ -426,324 +263,579 @@
             margin-bottom: 60px;
         }
 
-        /* ===== PAIN SECTION ===== */
-        .pain {
+        .text-center { text-align: center; }
+
+        .section-header-centered {
+            text-align: center;
+            margin-bottom: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* ===== BTN SECONDARY (outlined) ===== */
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: transparent;
+            color: var(--white);
+            padding: 15px 34px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            border: 2px solid var(--green);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: var(--green);
+            transform: translateY(-2px);
+        }
+
+        /* ===== RECONHECE SECTION ===== */
+        .reconhece {
             background: var(--white);
             color: var(--navy-dark);
         }
 
-        .pain-grid {
+        .reconhece .section-title { color: var(--navy-dark); }
+
+        .check-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
+            gap: 14px;
+            max-width: 840px;
+            margin: 0 auto 40px;
         }
 
-        .pain-image {
-            position: relative;
-            border-radius: 20px;
-            overflow: hidden;
-        }
-
-        .pain-image img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            border-radius: 20px;
-        }
-
-        .pain-image::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to top, rgba(28, 40, 54, 0.3), transparent);
-            border-radius: 20px;
-        }
-
-        .pain-items {
+        .check-item {
             display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
-
-        .pain-item {
-            display: flex;
-            gap: 16px;
             align-items: flex-start;
-            padding: 20px;
-            border-radius: 12px;
+            gap: 12px;
+            padding: 16px 20px;
             background: var(--cream);
-            transition: transform 0.3s;
+            border-radius: 12px;
+            border-left: 3px solid var(--green);
+            transition: transform 0.2s;
         }
 
-        .pain-item:hover {
-            transform: translateX(8px);
-        }
+        .check-item:hover { transform: translateX(4px); }
 
-        .pain-icon {
+        .check-dot {
             flex-shrink: 0;
-            width: 44px;
-            height: 44px;
-            background: rgba(222, 198, 134, 0.2);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .pain-icon svg {
-            width: 22px;
-            height: 22px;
-            color: var(--gold);
-        }
-
-        .pain-item h4 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 0.95rem;
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
-
-        .pain-item p {
-            font-size: 0.85rem;
-            color: #5a6a7a;
-            line-height: 1.6;
-        }
-
-        /* ===== METODO SECTION ===== */
-        .metodo {
-            background: var(--navy-dark);
-            color: var(--white);
-        }
-
-        .metodo .section-label {
-            color: var(--gold);
-        }
-
-        .metodo .section-title {
-            color: var(--white);
-        }
-
-        .metodo .section-subtitle {
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .timeline {
-            display: flex;
-            flex-direction: column;
-            gap: 0;
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 30px;
-            top: 32px;
-            bottom: 32px;
-            width: 2px;
-            background: linear-gradient(to bottom, var(--gold), var(--green));
-        }
-
-        .timeline-item {
-            display: flex;
-            gap: 32px;
-            align-items: flex-start;
-            padding: 32px 0;
-            position: relative;
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            cursor: default;
-        }
-
-        .timeline-item:hover {
-            transform: translateX(12px);
-        }
-
-        .timeline-item:hover .timeline-number {
-            transform: scale(1.15) rotate(5deg);
-            box-shadow: 0 8px 25px rgba(222, 198, 134, 0.5);
-            background: linear-gradient(135deg, #fff, var(--gold));
-            color: var(--navy-dark);
-        }
-
-        .timeline-number {
-            flex-shrink: 0;
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--gold), #c9a84e);
+            width: 20px; height: 20px;
+            background: var(--green);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family: 'Tenor Sans', serif;
-            font-size: 1.4rem;
-            color: var(--navy-dark);
-            position: relative;
-            z-index: 2;
-            box-shadow: 0 4px 20px rgba(222, 198, 134, 0.3);
-            transition: all 0.4s ease;
+            margin-top: 2px;
         }
 
-        .timeline-content {
-            transition: color 0.3s ease;
-        }
+        .check-dot svg { width: 11px; height: 11px; color: white; }
 
-        .timeline-item:hover .timeline-content h3 {
-            color: #fff;
-            text-shadow: 0 0 10px rgba(222, 198, 134, 0.3);
-        }
-
-        .timeline-content h3 {
-            font-size: 1.2rem;
-            margin-bottom: 8px;
-            color: var(--gold);
-            transition: all 0.3s ease;
-        }
-
-        .timeline-content p {
+        .check-item p {
             font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.7);
-            line-height: 1.7;
-        }
-
-        /* ===== RESULTADOS SECTION ===== */
-        .resultados {
-            background: var(--cream);
+            font-weight: 500;
             color: var(--navy-dark);
+            line-height: 1.5;
         }
 
-        .results-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-
-        .result-card {
-            background: var(--white);
-            border-radius: 16px;
-            padding: 32px 28px;
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: 1px solid rgba(42, 58, 76, 0.06);
-        }
-
-        .result-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 40px rgba(42, 58, 76, 0.1);
-        }
-
-        .result-icon {
-            width: 56px;
-            height: 56px;
-            background: var(--green-pale);
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-
-        .result-icon svg {
-            width: 26px;
-            height: 26px;
-            color: var(--green);
-        }
-
-        .result-card h4 {
-            font-family: 'Poppins', sans-serif;
+        .reconhece-closing {
+            max-width: 680px;
+            margin: 0 auto 40px;
+            text-align: center;
             font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .result-card p {
-            font-size: 0.85rem;
             color: #5a6a7a;
             line-height: 1.7;
         }
 
-        /* ===== DIFERENCIAL SECTION ===== */
-        .diferencial {
+        .reconhece-closing strong {
+            color: var(--navy-dark);
+        }
+
+        /* ===== SERVICOS SECTION ===== */
+        .servicos {
+            background: var(--navy-dark);
+            color: var(--white);
+        }
+
+        .servicos .section-label { color: var(--gold); }
+        .servicos .section-title { color: var(--white); }
+        .servicos .section-subtitle { color: rgba(255,255,255,0.7); }
+
+        .services-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .service-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.09);
+            border-radius: 16px;
+            padding: 28px 24px;
+            flex: 1 1 280px;
+            max-width: 340px;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .service-card:hover {
+            background: rgba(255,255,255,0.09);
+            transform: translateY(-4px);
+        }
+
+        .service-icon {
+            width: 52px; height: 52px;
+            background: rgba(197, 164, 78, 0.15);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+
+        .service-icon svg { width: 26px; height: 26px; color: var(--gold); }
+
+        .service-card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            font-size: 0.875rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.7;
+        }
+
+        .servicos-cta {
+            text-align: center;
+            margin-top: 52px;
+        }
+
+        /* ===== CUSTO SECTION ===== */
+        .custo {
+            background: var(--cream);
+            color: var(--navy-dark);
+        }
+
+        .custo .section-title { color: var(--navy-dark); }
+
+        .custo-intro {
+            max-width: 680px;
+            margin: 0 auto 40px;
+            text-align: center;
+            font-size: 1rem;
+            color: #5a6a7a;
+            line-height: 1.7;
+        }
+
+        .danger-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            max-width: 840px;
+            margin: 0 auto 40px;
+        }
+
+        .danger-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 20px;
+            background: #fff5f5;
+            border-radius: 10px;
+            border-left: 3px solid #e53e3e;
+        }
+
+        .danger-x {
+            flex-shrink: 0;
+            width: 22px; height: 22px;
+            background: #e53e3e;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .danger-x svg { width: 12px; height: 12px; color: white; }
+
+        .danger-item p {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #2d3748;
+        }
+
+        .custo-quote {
+            max-width: 720px;
+            margin: 0 auto 44px;
+            font-size: 1.05rem;
+            color: var(--navy-dark);
+            font-weight: 500;
+            line-height: 1.65;
+            padding: 24px 32px;
+            border-left: 4px solid var(--gold);
+            background: rgba(197, 164, 78, 0.07);
+            border-radius: 0 12px 12px 0;
+        }
+
+        .custo-cta { text-align: center; }
+
+        .btn-primary-dark {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--green);
+            color: var(--white);
+            padding: 16px 36px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(46, 125, 79, 0.25);
+        }
+
+        .btn-primary-dark:hover {
+            background: #256b42;
+            transform: translateY(-2px);
+        }
+
+        /* ===== CONFIANCA SECTION ===== */
+        .confianca {
             background: var(--white);
             color: var(--navy-dark);
         }
 
-        .diferencial-card {
-            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
-            color: var(--white);
-            border: 2px solid var(--gold);
-            border-radius: 24px;
-            padding: 56px 48px;
-            max-width: 820px;
-            margin: 0 auto;
+        .trust-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
         }
 
-        .diferencial-card-header {
+        .trust-list {
+            list-style: none;
             display: flex;
-            align-items: center;
-            gap: 16px;
-            margin-bottom: 40px;
+            flex-direction: column;
+            gap: 18px;
         }
 
-        .diferencial-card-label {
-            font-size: 0.7rem;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--gold);
-            margin-bottom: 6px;
+        .trust-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            font-size: 0.95rem;
+            color: #334155;
+            line-height: 1.6;
         }
 
-        .diferencial-card-header h3 {
-            font-size: 1.8rem;
-            color: var(--gold);
-            margin: 0;
-        }
-
-        .diferencial-icon {
-            width: 56px;
-            height: 56px;
-            background: rgba(222, 198, 134, 0.12);
-            border: 1px solid rgba(222, 198, 134, 0.3);
-            border-radius: 14px;
+        .trust-check {
+            flex-shrink: 0;
+            width: 26px; height: 26px;
+            background: var(--green);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-shrink: 0;
+            margin-top: 1px;
         }
 
-        .diferencial-icon svg {
-            width: 28px;
-            height: 28px;
-            color: var(--gold);
+        .trust-check svg { width: 13px; height: 13px; color: white; }
+
+        .escritorio-text h3 {
+            font-size: 1.3rem;
+            color: var(--navy-dark);
+            margin-bottom: 16px;
+            font-weight: 600;
         }
 
-        .compare-list {
-            list-style: none;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px 40px;
-        }
-
-        .compare-list li {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
+        .escritorio-text p {
+            color: #5a6a7a;
             font-size: 0.95rem;
-            line-height: 1.6;
-            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.75;
+            margin-bottom: 12px;
         }
 
-        .compare-list li svg {
+        .escritorio-foto img {
+            width: 100%;
+            height: 440px;
+            object-fit: cover;
+            object-position: center top;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(15, 30, 30, 0.14);
+        }
+
+        .btn-confianca {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--green);
+            color: var(--white);
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 18px rgba(46, 125, 79, 0.28);
+        }
+
+        .btn-confianca:hover {
+            background: #256b42;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(46, 125, 79, 0.4);
+        }
+
+        .btn-confianca svg { width: 18px; height: 18px; }
+
+        /* ===== REVIEWS SECTION ===== */
+        .reviews {
+            background: var(--navy-dark);
+            color: var(--white);
+            overflow: hidden;
+        }
+
+        .reviews .section-label { color: var(--gold); }
+        .reviews .section-title { color: var(--white); }
+
+        .reviews-cta-wrap {
+            text-align: center;
+            padding: 40px 24px 0;
+        }
+
+        @keyframes btn-swing {
+            0%   { transform: translateX(0); }
+            20%  { transform: translateX(18px); }
+            40%  { transform: translateX(0); }
+            60%  { transform: translateX(-18px); }
+            80%  { transform: translateX(0); }
+            100% { transform: translateX(0); }
+        }
+
+        .reviews-cta-google {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--white);
+            color: var(--navy-dark);
+            padding: 13px 28px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+            animation: btn-swing 2.8s ease-in-out infinite;
+        }
+
+        .reviews-cta-google:hover {
+            animation-play-state: paused;
+            box-shadow: 0 6px 24px rgba(0,0,0,0.4);
+        }
+
+        .reviews-summary-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 680px;
+            margin: 0 auto 52px;
+            padding: 24px 32px;
+            background: var(--white);
+            border-radius: 16px;
+            border: 1px solid rgba(0,0,0,0.09);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+
+        .reviews-brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .reviews-brand-name {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--navy-dark);
+            line-height: 1.3;
+        }
+
+        .reviews-brand-sub {
+            font-size: 0.75rem;
+            color: #888;
+        }
+
+        .reviews-score-group {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .reviews-score-num {
+            font-size: 2.6rem;
+            font-weight: 700;
+            color: var(--navy-dark);
+            line-height: 1;
+        }
+
+        .reviews-score-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .reviews-stars-row {
+            display: flex;
+            gap: 2px;
+        }
+
+        .reviews-stars-row svg {
+            width: 18px; height: 18px;
+            fill: #f59e0b;
+            color: #f59e0b;
+        }
+
+        .reviews-count-label {
+            font-size: 0.78rem;
+            color: #666;
+        }
+
+        .reviews-google-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            border: 1.5px solid rgba(0,0,0,0.15);
+            border-radius: 8px;
+            padding: 9px 16px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: #1a1a2e;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        .reviews-google-link:hover {
+            border-color: #4285F4;
+            color: #4285F4;
+        }
+
+        /* Carousel */
+        .reviews-carousel {
+            overflow: hidden;
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 7%, black 93%, transparent 100%);
+            mask-image: linear-gradient(to right, transparent 0%, black 7%, black 93%, transparent 100%);
+        }
+
+        .reviews-track {
+            display: flex;
+            gap: 18px;
+            animation: scroll-marquee 60s linear infinite;
+            width: max-content;
+        }
+
+        .reviews-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll-marquee {
+            from { transform: translateX(0); }
+            to   { transform: translateX(-50%); }
+        }
+
+        .review-card {
+            width: 290px;
             flex-shrink: 0;
-            width: 20px;
-            height: 20px;
-            margin-top: 2px;
-            color: var(--gold);
+            background: var(--white);
+            border-radius: 14px;
+            padding: 20px 18px;
+            border: 1px solid rgba(0,0,0,0.08);
+            box-shadow: 0 3px 14px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            cursor: default;
+            transition: box-shadow 0.25s;
+        }
+
+        .review-card:hover {
+            box-shadow: 0 8px 28px rgba(0,0,0,0.1);
+        }
+
+        .review-card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .review-author {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .review-avatar {
+            width: 36px; height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+
+        .review-info-name {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--navy-dark);
+            line-height: 1.2;
+        }
+
+        .review-info-count {
+            font-size: 0.7rem;
+            color: #999;
+            margin-top: 1px;
+        }
+
+        .review-card-stars {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+        }
+
+        .review-card-stars svg {
+            width: 14px; height: 14px;
+            fill: #f59e0b;
+            color: #f59e0b;
+        }
+
+        .review-card-date {
+            font-size: 0.7rem;
+            color: #aaa;
+            margin-left: 4px;
+        }
+
+        .review-text {
+            font-size: 0.855rem;
+            color: #4a5568;
+            line-height: 1.7;
+            flex: 1;
+        }
+
+        .review-card-footer {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding-top: 10px;
+            border-top: 1px solid rgba(0,0,0,0.06);
+            font-size: 0.7rem;
+            color: #999;
         }
 
         /* ===== SOBRE SECTION ===== */
@@ -759,9 +851,7 @@
             align-items: center;
         }
 
-        .sobre-text h2 {
-            margin-bottom: 20px;
-        }
+        .sobre-text h2 { margin-bottom: 20px; }
 
         .sobre-text p {
             color: #5a6a7a;
@@ -775,10 +865,7 @@
             margin-top: 40px;
         }
 
-        .team-card {
-            text-align: center;
-            flex: 1;
-        }
+        .team-card { text-align: center; flex: 1; }
 
         .team-card img {
             width: 100%;
@@ -790,146 +877,84 @@
             box-shadow: 0 8px 30px rgba(42, 58, 76, 0.12);
         }
 
-        .team-card h4 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1rem;
-            font-weight: 600;
-        }
+        .team-card h4 { font-size: 1rem; font-weight: 600; }
+        .team-card span { font-size: 0.8rem; color: var(--green); font-weight: 500; }
 
-        .team-card span {
-            font-size: 0.8rem;
-            color: var(--green);
-            font-weight: 500;
-        }
-
-        /* ===== FORM SECTION ===== */
-        .formulario {
-            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+        /* ===== WHATSAPP CTA SECTION ===== */
+        .wpp-cta {
+            background: linear-gradient(135deg, #0a1a1a 0%, var(--navy) 100%);
             color: var(--white);
+            text-align: center;
             position: relative;
             overflow: hidden;
         }
 
-        .formulario::before {
+        .wpp-cta::before {
             content: '';
             position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(222, 198, 134, 0.08) 0%, transparent 70%);
+            top: -50%; left: 50%;
+            transform: translateX(-50%);
+            width: 700px; height: 700px;
+            background: radial-gradient(circle, rgba(45, 138, 78, 0.09) 0%, transparent 70%);
             border-radius: 50%;
+            pointer-events: none;
         }
 
-        .form-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
+        .wpp-cta-inner {
             position: relative;
             z-index: 2;
+            max-width: 640px;
+            margin: 0 auto;
         }
 
-        .form-text .section-label {
-            color: var(--gold);
-        }
-
-        .form-text .section-title {
+        .wpp-cta h2 {
+            font-size: clamp(1.6rem, 4vw, 2.2rem);
             color: var(--white);
-        }
-
-        .form-text p {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 1rem;
-        }
-
-        .form-box {
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 40px;
-            backdrop-filter: blur(10px);
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 0.8rem;
+            margin-bottom: 16px;
             font-weight: 500;
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 6px;
+            line-height: 1.3;
         }
 
-        .form-group input,
-        .form-group select {
-            width: 100%;
-            padding: 14px 18px;
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 10px;
-            color: var(--white);
-            font-family: 'Poppins', sans-serif;
-            font-size: 0.9rem;
-            transition: border-color 0.3s;
-            outline: none;
-        }
-
-        .form-group input::placeholder {
-            color: rgba(255, 255, 255, 0.35);
-        }
-
-        .form-group input:focus,
-        .form-group select:focus {
-            border-color: var(--gold);
-        }
-
-        .form-group select option {
-            background: var(--navy-dark);
-            color: var(--white);
-        }
-
-        .form-submit {
-            width: 100%;
-            padding: 16px;
-            background: var(--green);
-            color: var(--white);
-            border: none;
-            border-radius: 50px;
-            font-family: 'Poppins', sans-serif;
+        .wpp-cta p {
+            color: rgba(255,255,255,0.65);
             font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
+            margin-bottom: 36px;
+            line-height: 1.7;
+        }
+
+        .wpp-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: #25D366;
+            color: var(--white);
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-size: 1.05rem;
+            font-weight: 700;
             transition: all 0.3s;
-            box-shadow: 0 4px 20px rgba(46, 125, 79, 0.35);
+            box-shadow: 0 6px 28px rgba(37, 211, 102, 0.35);
         }
 
-        .form-submit:hover {
-            background: #256b42;
-            transform: translateY(-2px);
+        .wpp-cta-btn:hover {
+            background: #1ebe5c;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 36px rgba(37, 211, 102, 0.45);
         }
 
-        .form-disclaimer {
-            text-align: center;
-            font-size: 0.75rem;
-            color: rgba(255, 255, 255, 0.4);
-            margin-top: 16px;
-        }
+        .wpp-cta-btn svg { width: 24px; height: 24px; }
 
-        .form-disclaimer svg {
-            display: inline;
-            width: 14px;
-            height: 14px;
-            vertical-align: -2px;
-            margin-right: 4px;
+        .wpp-cta-note {
+            margin-top: 18px;
+            font-size: 0.78rem;
+            color: rgba(255,255,255,0.35);
+            letter-spacing: 0.5px;
         }
 
         /* ===== FOOTER ===== */
         .footer {
             background: #000000;
-            color: rgba(255, 255, 255, 0.6);
+            color: rgba(255,255,255,0.6);
             padding: 60px 0 30px;
         }
 
@@ -940,18 +965,10 @@
             margin-bottom: 40px;
         }
 
-        .footer-logo img {
-            height: 40px;
-            margin-bottom: 16px;
-        }
-
-        .footer-about p {
-            font-size: 0.85rem;
-            line-height: 1.7;
-        }
+        .footer-logo img { height: 40px; margin-bottom: 16px; }
+        .footer-about p { font-size: 0.85rem; line-height: 1.7; }
 
         .footer h5 {
-            font-family: 'Poppins', sans-serif;
             font-size: 0.8rem;
             font-weight: 600;
             color: var(--gold);
@@ -967,17 +984,9 @@
             gap: 10px;
         }
 
-        .footer-links li {
-            font-size: 0.85rem;
-        }
-
-        .footer-links a {
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: var(--gold);
-        }
+        .footer-links li { font-size: 0.85rem; }
+        .footer-links a { transition: color 0.3s; }
+        .footer-links a:hover { color: var(--gold); }
 
         .footer-contact-item {
             display: flex;
@@ -987,15 +996,10 @@
             margin-bottom: 10px;
         }
 
-        .footer-contact-item svg {
-            width: 16px;
-            height: 16px;
-            color: var(--gold);
-            flex-shrink: 0;
-        }
+        .footer-contact-item svg { width: 16px; height: 16px; color: var(--gold); flex-shrink: 0; }
 
         .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            border-top: 1px solid rgba(255,255,255,0.08);
             padding-top: 24px;
             display: flex;
             justify-content: space-between;
@@ -1006,11 +1010,9 @@
         /* ===== WHATSAPP FLOAT ===== */
         .whatsapp-float {
             position: fixed;
-            bottom: 24px;
-            right: 24px;
+            bottom: 24px; right: 24px;
             z-index: 999;
-            width: 60px;
-            height: 60px;
+            width: 60px; height: 60px;
             background: #25D366;
             border-radius: 50%;
             display: flex;
@@ -1026,24 +1028,12 @@
             box-shadow: 0 6px 28px rgba(37, 211, 102, 0.5);
         }
 
-        .whatsapp-float svg {
-            width: 32px;
-            height: 32px;
-            color: var(--white);
-        }
+        .whatsapp-float svg { width: 32px; height: 32px; color: var(--white); }
 
         @keyframes pulse-whatsapp {
-            0% {
-                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-            }
-
-            50% {
-                box-shadow: 0 4px 30px rgba(37, 211, 102, 0.6), 0 0 0 10px rgba(37, 211, 102, 0.1);
-            }
-
-            100% {
-                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-            }
+            0%   { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
+            50%  { box-shadow: 0 4px 30px rgba(37, 211, 102, 0.6), 0 0 0 10px rgba(37, 211, 102, 0.1); }
+            100% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
         }
 
         /* ===== ANIMATIONS ===== */
@@ -1053,107 +1043,48 @@
             transition: opacity 0.7s ease, transform 0.7s ease;
         }
 
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 992px) {
-
-            .pain-grid,
             .sobre-grid,
-            .form-wrapper {
+            .trust-grid {
                 grid-template-columns: 1fr;
             }
 
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
+            .footer-grid { grid-template-columns: 1fr; }
 
-            .results-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            .check-grid,
+            .danger-grid { grid-template-columns: 1fr; }
 
-            .pain-image {
-                order: -1;
-            }
-
-            .pain-image img {
-                height: 260px;
-            }
-
-            .hero::after {
-                width: 75%;
-            }
-
-            .hero-content {
-                max-width: 500px;
-            }
+            .reviews-grid { grid-template-columns: 1fr 1fr; }
         }
 
         @media (max-width: 768px) {
             .hero {
-                align-items: flex-start;
-                padding-top: 80px;
+                align-items: center;
+                padding-top: 0;
                 min-height: 100svh;
             }
 
+            .hero-content { padding: 40px 0; }
 
+            .hero h1 { font-size: clamp(1.8rem, 6vw, 2.4rem); }
 
-            .hero-content {
-                padding: 40px 0 0;
-                max-width: 100%;
-            }
+            .hero-sub { font-size: 0.95rem; }
 
-            .hero h1 {
-                font-size: clamp(1.8rem, 6vw, 2.4rem);
-                max-width: 100%;
-            }
+            .hero-scroll { display: none; }
 
-            .hero-sub {
-                max-width: 100%;
-                font-size: 0.95rem;
-            }
-
-            .hero-scroll {
-                display: none;
-            }
-
-            .hero-actions {
-                flex-direction: column;
-                align-items: flex-start;
-            }
+            .service-card { max-width: 100%; }
         }
 
         @media (max-width: 600px) {
-            section {
-                padding: 70px 0;
-            }
+            section { padding: 70px 0; }
 
-            .results-grid {
-                grid-template-columns: 1fr;
-            }
+            .team-cards { flex-direction: column; }
+            .team-card img { height: 320px; }
 
-            .team-cards {
-                flex-direction: column;
-            }
-
-            .team-card img {
-                height: 320px;
-            }
-
-            .form-box {
-                padding: 28px 20px;
-            }
-
-            .diferencial-card {
-                padding: 32px 24px;
-            }
-
-            .compare-list {
-                grid-template-columns: 1fr;
-            }
+            .reviews-grid { grid-template-columns: 1fr; }
 
             .footer-bottom {
                 flex-direction: column;
@@ -1161,354 +1092,695 @@
                 text-align: center;
             }
 
-            .navbar-cta span {
-                display: none;
-            }
+            .navbar-cta span { display: none; }
         }
     </style>
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
-    <nav class="navbar" id="navbar">
-        <div class="container">
-            <a href="#" class="navbar-logo">
-                <img src="assets/PNG BRANCO.png" alt="Rockenbach & Mota">
-            </a>
-            <a href="#formulario" class="navbar-cta">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <path
-                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
-                </svg>
-                <span>Fale com um especialista</span>
-            </a>
-        </div>
-    </nav>
-
     <!-- HERO -->
     <section class="hero" id="hero">
-        <video class="hero-video" autoplay loop muted playsinline preload="auto" poster="assets/bg-1.jpg">
-            <source src="assets/bgvideo.mp4" type="video/mp4">
-        </video>
         <div class="hero-overlay"></div>
         <div class="container">
             <div class="hero-content">
-                <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-bottom: 32px;">
-                    <div class="hero-badge" style="margin-bottom: 0;">MÉTODO <span>RM</span></div>
-                    <div class="hero-urgency"
-                        style="flex-direction: row; padding: 10px 18px; align-items: center; gap: 8px; background: rgba(0,0,0,0.2); border: 1px solid rgba(222,198,134,0.25);">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px;">
-                            <circle cx="12" cy="12" r="10" />
-                            <line x1="12" y1="8" x2="12" y2="12" />
-                            <line x1="12" y1="16" x2="12.01" y2="16" />
-                        </svg>
-                        <span style="font-weight: 500; font-size: 0.95rem;">O prazo de 30 de abril passou — ainda dá tempo de renegociar.</span>
-                    </div>
-                </div>
-                <h1>Ainda dá tempo: analise as condições e faça a <strong>renegociação.</strong></h1>
-                <p class="hero-sub"
-                    style="color: var(--white); font-weight: 500; font-size: clamp(1.1rem, 2vw, 1.25rem); margin-bottom: 16px;">
-                    A reorganização da dívida rural começa com análise técnica.
-                </p>
-                <p class="hero-sub" style="font-size: 0.95rem;">Antes de qualquer renegociação, é necessário entender a situação real, organizar as informações e definir a melhor forma de conduzir a dívida.</p>
+                <img src="assets/PNG BRANCO.png" alt="Rockenbach &amp; Mota" class="hero-logo">
+                <h1>Sua terra, seu patrimônio e sua produção podem estar <strong>mais expostos do que você imagina</strong></h1>
+                <p class="hero-sub">Um problema jurídico mal resolvido pode custar anos de trabalho. Um advogado especialista em agronegócio protege o que você construiu, antes que vire prejuízo.</p>
                 <div class="hero-actions">
-                    <a href="#formulario" class="btn-primary">
-                        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" style="width: 20px; height: 20px;">
-                            <path
-                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                    <a href="https://wa.me/5534999587061?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20falar%20com%20um%20especialista%20agora." class="btn-primary" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                         </svg>
-                        Quero saber mais
+                        Falar com um Especialista Agora
                     </a>
+                    <span class="hero-social-proof">Atendimento em todo o Brasil &nbsp;•&nbsp; Primeira conversa sem compromisso</span>
                 </div>
             </div>
         </div>
         <a href="#dor" class="hero-scroll">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <polyline points="6 9 12 15 18 9" />
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"/>
             </svg>
         </a>
     </section>
 
-    <!-- PAIN / PROBLEM -->
-    <section class="pain" id="dor">
+    <!-- VOCÊ RECONHECE? -->
+    <section class="reconhece" id="dor">
         <div class="container">
-            <div class="pain-grid">
-                <div class="pain-image fade-in">
-                    <img src="assets/olhando horizonte.jpg" alt="Produtor rural olhando para o horizonte">
+            <div class="section-header-centered fade-in">
+                <div class="section-label">O problema</div>
+                <h2 class="section-title">Você reconhece alguma dessas situações?</h2>
+            </div>
+            <div class="check-grid fade-in">
+                <div class="check-item">
+                    <div class="check-dot">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <p>Dívidas crescendo e o banco apertando</p>
                 </div>
+                <div class="check-item">
+                    <div class="check-dot">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <p>Imóvel rural sem regularização travando venda, crédito ou sucessão</p>
+                </div>
+                <div class="check-item">
+                    <div class="check-dot">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <p>Contratos de arrendamento, parceria ou CPR mal feitos</p>
+                </div>
+                <div class="check-item">
+                    <div class="check-dot">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <p>Passivo tributário e pendências fiscais acumulando</p>
+                </div>
+                <div class="check-item">
+                    <div class="check-dot">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <p>Patrimônio da família sem proteção e sem plano de sucessão</p>
+                </div>
+                <div class="check-item">
+                    <div class="check-dot">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <p>Crescimento do negócio sem nenhuma estrutura jurídica por trás</p>
+                </div>
+            </div>
+            <p class="reconhece-closing fade-in">
+                Se você reconheceu pelo menos um item, cada mês parado aumenta o custo de resolver.<br>
+                <strong>O momento de agir é antes do problema virar processo.</strong>
+            </p>
+            <div style="text-align: center;" class="fade-in">
+                <a href="https://wa.me/5534999587061?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20resolver%20um%20problema%20jur%C3%ADdico%20no%20agroneg%C3%B3cio." class="btn-primary" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    </svg>
+                    Quero Resolver Isso com um Especialista
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMO PROTEGEMOS -->
+    <section class="servicos" id="servicos">
+        <div class="container">
+            <div class="section-header-centered">
+                <div class="section-label">O que fazemos</div>
+                <h2 class="section-title" style="color: var(--white);">Como protegemos o seu negócio na prática</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                        </svg>
+                    </div>
+                    <h3>Diagnóstico Jurídico Estratégico</h3>
+                    <p>Antes de qualquer ação, mapeamos onde estão os riscos e as oportunidades do seu negócio. Você sai sabendo exatamente o que precisa ser protegido.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                        </svg>
+                    </div>
+                    <h3>Renegociação de Dívidas e Passivo Tributário</h3>
+                    <p>Reorganizamos seu endividamento rural e regularizamos pendências fiscais com estratégia, para você voltar a ter acesso a crédito e respirar com tranquilidade.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
+                        </svg>
+                    </div>
+                    <h3>Contratos do Agronegócio Bem Estruturados</h3>
+                    <p>Arrendamento, parceria, CPR, garantias e operações com tradings revisados e padronizados, para você nunca mais assinar um contrato que te prejudica.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                    </div>
+                    <h3>Proteção Patrimonial e Sucessão (Holding Rural)</h3>
+                    <p>Estruturamos sua holding e seu planejamento sucessório para blindar o patrimônio da família e evitar conflitos e perdas no futuro.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                        </svg>
+                    </div>
+                    <h3>Estruturação Societária e Crescimento Organizado</h3>
+                    <p>Reorganizamos a empresa rural com governança, compliance e LGPD para crescer com segurança, sem improviso.</p>
+                </div>
+            </div>
+            <div class="servicos-cta fade-in">
+                <a href="https://wa.me/5534999587061?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20entender%20como%20proteger%20meu%20neg%C3%B3cio." class="btn-primary" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    </svg>
+                    Quero Entender Como Proteger Meu Negócio
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- O CUSTO DE NÃO TER ORIENTAÇÃO -->
+    <section class="custo" id="custo">
+        <div class="container">
+            <div class="section-header-centered fade-in">
+                <div class="section-label">O risco de esperar</div>
+                <h2 class="section-title">O custo de não ter orientação jurídica</h2>
+            </div>
+            <p class="custo-intro fade-in">Muitos produtores só procuram um advogado quando o problema já está avançado, e o prejuízo acaba sendo bem maior. Sem estrutura jurídica, o risco é real:</p>
+            <div class="danger-grid fade-in">
+                <div class="danger-item">
+                    <div class="danger-x">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                    </div>
+                    <p>Perda de terras ou direitos sobre a propriedade</p>
+                </div>
+                <div class="danger-item">
+                    <div class="danger-x">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                    </div>
+                    <p>Prejuízos financeiros que poderiam ser evitados</p>
+                </div>
+                <div class="danger-item">
+                    <div class="danger-x">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                    </div>
+                    <p>Crédito negado e atividade travada</p>
+                </div>
+                <div class="danger-item">
+                    <div class="danger-x">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                    </div>
+                    <p>Contratos desfavoráveis que você assinou sem perceber</p>
+                </div>
+                <div class="danger-item">
+                    <div class="danger-x">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                    </div>
+                    <p>Conflitos familiares na sucessão</p>
+                </div>
+                <div class="danger-item">
+                    <div class="danger-x">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                    </div>
+                    <p>Processos longos, caros e desgastantes</p>
+                </div>
+            </div>
+            <div class="custo-quote fade-in">
+                A diferença entre quem cresce tranquilo e quem vive apagando incêndio é ter estratégia jurídica desde o início.
+            </div>
+            <div class="custo-cta fade-in">
+                <a href="https://wa.me/5534999587061?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20agir%20antes%20que%20o%20problema%20cres%C3%A7a." class="btn-primary-dark" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" style="width:20px;height:20px;">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    </svg>
+                    Quero Agir Antes do Problema
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- POR QUE CONFIAM -->
+    <section class="confianca" id="confianca">
+        <div class="container">
+            <div class="trust-grid">
                 <div class="fade-in">
-                    <div class="section-label">O problema</div>
-                    <h2 class="section-title">O que acontece quando o produtor vai ao banco sozinho</h2>
-                    <div class="pain-items">
-                        <div class="pain-item">
-                            <div class="pain-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round">
-                                    <circle cx="12" cy="12" r="10" />
-                                    <line x1="15" y1="9" x2="9" y2="15" />
-                                    <line x1="9" y1="9" x2="15" y2="15" />
-                                </svg>
+                    <div class="section-label">Por que nos escolhem</div>
+                    <h2 class="section-title">Por que produtores e empresas do agro confiam na nossa atuação</h2>
+                    <ul class="trust-list">
+                        <li class="trust-item">
+                            <div class="trust-check">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             </div>
-                            <div>
-                                <h4>Aceita a primeira proposta</h4>
-                                <p>Sem análise técnica, decisões são tomadas com base apenas no que é apresentado pelo
-                                    banco.</p>
+                            <span>Entendemos a realidade do campo: falamos a sua língua, não em "juridiquês"</span>
+                        </li>
+                        <li class="trust-item">
+                            <div class="trust-check">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             </div>
-                        </div>
-                        <div class="pain-item">
-                            <div class="pain-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-                                </svg>
+                            <span>Atuação preventiva e estratégica: resolvemos antes de virar processo</span>
+                        </li>
+                        <li class="trust-item">
+                            <div class="trust-check">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             </div>
-                            <div>
-                                <h4>Condições financeiras desfavoráveis</h4>
-                                <p>Contratos podem conter encargos e condições que impactam diretamente o custo da
-                                    operação.</p>
+                            <span>Acompanhamento próximo e contínuo: você não fica no escuro</span>
+                        </li>
+                        <li class="trust-item">
+                            <div class="trust-check">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             </div>
-                        </div>
-                        <div class="pain-item">
-                            <div class="pain-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                                    <polyline points="14 2 14 8 20 8" />
-                                </svg>
+                            <span>Visão completa do negócio: do contrato à sucessão, do crédito ao tributário</span>
+                        </li>
+                        <li class="trust-item">
+                            <div class="trust-check">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             </div>
-                            <div>
-                                <h4>Não analisa a capacidade de pagamento</h4>
-                                <p>Assina parcelas que não cabem no fluxo da propriedade e cai num ciclo de
-                                    inadimplência.</p>
-                            </div>
-                        </div>
-                        <div class="pain-item">
-                            <div class="pain-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round">
-                                    <path
-                                        d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
-                                    <line x1="12" y1="9" x2="12" y2="13" />
-                                    <line x1="12" y1="17" x2="12.01" y2="17" />
-                                </svg>
-                            </div>
-                            <div>
-                                <h4>A dívida se torna mais complexa de controlar</h4>
-                                <p>Sem estrutura, a renegociação pode aumentar o endividamento e dificultar a gestão.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                            <span>Atendimento em todo o Brasil, online e sem fronteiras</span>
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/5534999587061?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20falar%20com%20um%20advogado." class="btn-confianca" style="margin-top: 28px;" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                        </svg>
+                        Falar com um Advogado
+                    </a>
+                </div>
+                <div class="escritorio-foto fade-in">
+                    <img src="assets/foto-escritorio.jpg" alt="Escritório Rockenbach &amp; Mota">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- METODO RM - 5 FASES -->
-    <section class="metodo" id="metodo">
+    <!-- AVALIAÇÕES DO GOOGLE -->
+    <section class="reviews" id="reviews">
         <div class="container">
-            <div
-                style="text-align: center; margin-bottom: 60px; display: flex; flex-direction: column; align-items: center;">
-                <div class="section-label">Como funciona</div>
-                <h2 class="section-title">Método RM: análise e condução estruturada da dívida rural</h2>
-                <p class="section-subtitle" style="margin-bottom: 0;">5 fases, do diagnóstico ao acompanhamento</p>
+            <div class="section-header-centered fade-in">
+                <div class="section-label">Avaliações</div>
+                <h2 class="section-title">O que dizem nossos clientes</h2>
+                <p class="section-subtitle" style="text-align:center; color: rgba(255,255,255,0.6); margin-bottom: 48px;">Veja o que dizem os produtores e empresários que já confiaram em nós</p>
             </div>
-            <div class="timeline">
-                <div class="timeline-item fade-in">
-                    <div class="timeline-number">1</div>
-                    <div class="timeline-content">
-                        <h3>Diagnóstico Técnico</h3>
-                        <p>Levantamento de contratos, garantias e obrigações, com compreensão integrada da operação
-                            financeira.</p>
+        </div>
+
+        <!-- Carrossel infinito (fora do container para sangrar) -->
+        <div class="reviews-carousel">
+            <div class="reviews-track">
+                <!-- Set 1 -->
+                <div class="review-card">
+                    <div class="review-card-top">
+                        <div class="review-author">
+                            <div class="review-avatar" style="background:#4285F4;">A</div>
+                            <div>
+                                <div class="review-info-name">Alexandre Martins</div>
+                                <div class="review-info-count">3 avaliações · 1 foto</div>
+                            </div>
+                        </div>
+                        <svg width="20" height="20" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/><path fill="none" d="M0 0h48v48H0z"/></svg>
+                    </div>
+                    <div class="review-card-stars">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <span class="review-card-date">2 meses atrás</span>
+                    </div>
+                    <p class="review-text">Empresa séria, compromissada com o que faz e propõe, com respeito aos clientes e parceiros, e digo parceiro, pois eles nos enxergam além de clientes. Super recomendo para toda nossa região.</p>
+                    <div class="review-card-footer">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        1 curtida
                     </div>
                 </div>
-                <div class="timeline-item fade-in">
-                    <div class="timeline-number">2</div>
-                    <div class="timeline-content">
-                        <h3>Análise da Capacidade de Pagamento</h3>
-                        <p>Levantamento de contratos, garantias e obrigações, com compreensão integrada da operação
-                            financeira.</p>
+
+                <div class="review-card">
+                    <div class="review-card-top">
+                        <div class="review-author">
+                            <div class="review-avatar" style="background:#EA4335;">A</div>
+                            <div>
+                                <div class="review-info-name">Andre Ferreira</div>
+                                <div class="review-info-count">1 avaliação</div>
+                            </div>
+                        </div>
+                        <svg width="20" height="20" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/><path fill="none" d="M0 0h48v48H0z"/></svg>
+                    </div>
+                    <div class="review-card-stars">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <span class="review-card-date">2 meses atrás</span>
+                    </div>
+                    <p class="review-text">Fui muito bem atendido, atendeu as expectativas e são advogados que realmente entendem a situação com o olhar de quem conhece o agro. Super indico!</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-card-top">
+                        <div class="review-author">
+                            <div class="review-avatar" style="background:#9C27B0;">I</div>
+                            <div>
+                                <div class="review-info-name">Isadora Hionar</div>
+                                <div class="review-info-count">1 avaliação</div>
+                            </div>
+                        </div>
+                        <svg width="20" height="20" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/><path fill="none" d="M0 0h48v48H0z"/></svg>
+                    </div>
+                    <div class="review-card-stars">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <span class="review-card-date">2 meses atrás</span>
+                    </div>
+                    <p class="review-text">Excelentes profissionais, super competentes!</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-card-top">
+                        <div class="review-author">
+                            <div class="review-avatar" style="background:#34A853;">S</div>
+                            <div>
+                                <div class="review-info-name">Sander Guilherme</div>
+                                <div class="review-info-count">6 avaliações</div>
+                            </div>
+                        </div>
+                        <svg width="20" height="20" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/><path fill="none" d="M0 0h48v48H0z"/></svg>
+                    </div>
+                    <div class="review-card-stars">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <span class="review-card-date">2 meses atrás</span>
+                    </div>
+                    <p class="review-text">Excelentes profissionais, ótimos advogados.</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-card-top">
+                        <div class="review-author">
+                            <div class="review-avatar" style="background:#FF5722;">I</div>
+                            <div>
+                                <div class="review-info-name">Iana Iajelovic</div>
+                                <div class="review-info-count">1 avaliação</div>
+                            </div>
+                        </div>
+                        <svg width="20" height="20" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/><path fill="none" d="M0 0h48v48H0z"/></svg>
+                    </div>
+                    <div class="review-card-stars">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <span class="review-card-date">2 meses atrás</span>
+                    </div>
+                    <p class="review-text">Advogados atenciosos e cuidadosos. Excelentes profissionais.</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-card-top">
+                        <div class="review-author">
+                            <div class="review-avatar" style="background:#FBBC05; color:#333;">L</div>
+                            <div>
+                                <div class="review-info-name">Luiz Paulo H. Gonçalves</div>
+                                <div class="review-info-count">4 avaliações · 1 foto</div>
+                            </div>
+                        </div>
+                        <svg width="20" height="20" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/><path fill="none" d="M0 0h48v48H0z"/></svg>
+                    </div>
+                    <div class="review-card-stars">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <span class="review-card-date">2 meses atrás</span>
+                    </div>
+                    <p class="review-text">Profissionais excelentes e atenciosos.</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-card-top">
+                        <div class="review-author">
+                            <div class="review-avatar" style="background:#E91E63;">M</div>
+                            <div>
+                                <div class="review-info-name">Mirian Helena Lima</div>
+                                <div class="review-info-count">1 avaliação</div>
+                            </div>
+                        </div>
+                        <svg width="20" height="20" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/><path fill="none" d="M0 0h48v48H0z"/></svg>
+                    </div>
+                    <div class="review-card-stars">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <span class="review-card-date">2 meses atrás</span>
+                    </div>
+                    <p class="review-text">Melhor escritório da região.</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-card-top">
+                        <div class="review-author">
+                            <div class="review-avatar" style="background:#00BCD4;">D</div>
+                            <div>
+                                <div class="review-info-name">Diandra Tainá Rockenbach</div>
+                                <div class="review-info-count">3 avaliações</div>
+                            </div>
+                        </div>
+                        <svg width="20" height="20" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/><path fill="none" d="M0 0h48v48H0z"/></svg>
+                    </div>
+                    <div class="review-card-stars">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <span class="review-card-date">2 meses atrás</span>
+                    </div>
+                    <p class="review-text">São excelentes profissionais. Boa conduta e assessoria.</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-card-top">
+                        <div class="review-author">
+                            <div class="review-avatar" style="background:#4285F4;">J</div>
+                            <div>
+                                <div class="review-info-name">Júlia Queiroz</div>
+                                <div class="review-info-count">3 avaliações</div>
+                            </div>
+                        </div>
+                        <svg width="20" height="20" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/><path fill="none" d="M0 0h48v48H0z"/></svg>
+                    </div>
+                    <div class="review-card-stars">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <span class="review-card-date">2 meses atrás</span>
+                    </div>
+                    <p class="review-text">Equipe incrível e competente. Super recomendo!</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-card-top">
+                        <div class="review-author">
+                            <div class="review-avatar" style="background:#34A853;">G</div>
+                            <div>
+                                <div class="review-info-name">Geison Neves</div>
+                                <div class="review-info-count">6 avaliações · 3 fotos</div>
+                            </div>
+                        </div>
+                        <svg width="20" height="20" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/><path fill="none" d="M0 0h48v48H0z"/></svg>
+                    </div>
+                    <div class="review-card-stars">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <span class="review-card-date">2 meses atrás</span>
+                    </div>
+                    <p class="review-text">Ótimos profissionais e bem competentes, diga-se de passagem.</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-card-top">
+                        <div class="review-author">
+                            <div class="review-avatar" style="background:#EA4335;">J</div>
+                            <div>
+                                <div class="review-info-name">Jaqueline Ribeiro</div>
+                                <div class="review-info-count">9 avaliações</div>
+                            </div>
+                        </div>
+                        <svg width="20" height="20" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/><path fill="none" d="M0 0h48v48H0z"/></svg>
+                    </div>
+                    <div class="review-card-stars">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <span class="review-card-date">2 meses atrás</span>
+                    </div>
+                    <p class="review-text">Empresa formada por sócios altamente qualificados, éticos e profissionais.</p>
+                </div>
+
+                <!-- Set 2 — duplicate for infinite loop -->
+                <div class="review-card">
+                    <div class="review-card-top">
+                        <div class="review-author">
+                            <div class="review-avatar" style="background:#4285F4;">A</div>
+                            <div>
+                                <div class="review-info-name">Alexandre Martins</div>
+                                <div class="review-info-count">3 avaliações · 1 foto</div>
+                            </div>
+                        </div>
+                        <svg width="20" height="20" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/><path fill="none" d="M0 0h48v48H0z"/></svg>
+                    </div>
+                    <div class="review-card-stars">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <span class="review-card-date">2 meses atrás</span>
+                    </div>
+                    <p class="review-text">Empresa séria, compromissada com o que faz e propõe, com respeito aos clientes e parceiros, e digo parceiro, pois eles nos enxergam além de clientes. Super recomendo para toda nossa região.</p>
+                    <div class="review-card-footer">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        1 curtida
                     </div>
                 </div>
-                <div class="timeline-item fade-in">
-                    <div class="timeline-number">3</div>
-                    <div class="timeline-content">
-                        <h3>Parecer Estratégico</h3>
-                        <p>Com base no diagnóstico, elaboramos um parecer com as melhores alternativas: renegociação,
-                            prorrogação ou alongamento.</p>
+                <div class="review-card">
+                    <div class="review-card-top">
+                        <div class="review-author">
+                            <div class="review-avatar" style="background:#EA4335;">A</div>
+                            <div>
+                                <div class="review-info-name">Andre Ferreira</div>
+                                <div class="review-info-count">1 avaliação</div>
+                            </div>
+                        </div>
+                        <svg width="20" height="20" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/><path fill="none" d="M0 0h48v48H0z"/></svg>
                     </div>
+                    <div class="review-card-stars">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <span class="review-card-date">2 meses atrás</span>
+                    </div>
+                    <p class="review-text">Fui muito bem atendido, atendeu as expectativas e são advogados que realmente entendem a situação com o olhar de quem conhece o agro. Super indico!</p>
                 </div>
-                <div class="timeline-item fade-in">
-                    <div class="timeline-number">4</div>
-                    <div class="timeline-content">
-                        <h3>Reorganização financeira e negocial</h3>
-                        <p>Estruturação e condução das negociações junto às instituições financeiras com base na
-                            estratégia definida e nos dados levantados.</p>
+                <div class="review-card">
+                    <div class="review-card-top">
+                        <div class="review-author">
+                            <div class="review-avatar" style="background:#9C27B0;">I</div>
+                            <div><div class="review-info-name">Isadora Hionar</div><div class="review-info-count">1 avaliação</div></div>
+                        </div>
+                        <svg width="20" height="20" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/><path fill="none" d="M0 0h48v48H0z"/></svg>
                     </div>
+                    <div class="review-card-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="review-card-date">2 meses atrás</span></div>
+                    <p class="review-text">Excelentes profissionais, super competentes!</p>
                 </div>
-                <div class="timeline-item fade-in">
-                    <div class="timeline-number">5</div>
-                    <div class="timeline-content">
-                        <h3>Acompanhamento posterior</h3>
-                        <p>Monitoramento das condições pactuadas e adequação das medidas conforme necessário.</p>
+                <div class="review-card">
+                    <div class="review-card-top">
+                        <div class="review-author">
+                            <div class="review-avatar" style="background:#34A853;">S</div>
+                            <div><div class="review-info-name">Sander Guilherme</div><div class="review-info-count">6 avaliações</div></div>
+                        </div>
+                        <svg width="20" height="20" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/><path fill="none" d="M0 0h48v48H0z"/></svg>
                     </div>
+                    <div class="review-card-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="review-card-date">2 meses atrás</span></div>
+                    <p class="review-text">Excelentes profissionais, ótimos advogados.</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-card-top">
+                        <div class="review-author">
+                            <div class="review-avatar" style="background:#FF5722;">I</div>
+                            <div><div class="review-info-name">Iana Iajelovic</div><div class="review-info-count">1 avaliação</div></div>
+                        </div>
+                        <svg width="20" height="20" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/><path fill="none" d="M0 0h48v48H0z"/></svg>
+                    </div>
+                    <div class="review-card-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="review-card-date">2 meses atrás</span></div>
+                    <p class="review-text">Advogados atenciosos e cuidadosos. Excelentes profissionais.</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-card-top">
+                        <div class="review-author">
+                            <div class="review-avatar" style="background:#FBBC05;color:#333;">L</div>
+                            <div><div class="review-info-name">Luiz Paulo H. Gonçalves</div><div class="review-info-count">4 avaliações · 1 foto</div></div>
+                        </div>
+                        <svg width="20" height="20" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/><path fill="none" d="M0 0h48v48H0z"/></svg>
+                    </div>
+                    <div class="review-card-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="review-card-date">2 meses atrás</span></div>
+                    <p class="review-text">Profissionais excelentes e atenciosos.</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-card-top">
+                        <div class="review-author">
+                            <div class="review-avatar" style="background:#E91E63;">M</div>
+                            <div><div class="review-info-name">Mirian Helena Lima</div><div class="review-info-count">1 avaliação</div></div>
+                        </div>
+                        <svg width="20" height="20" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/><path fill="none" d="M0 0h48v48H0z"/></svg>
+                    </div>
+                    <div class="review-card-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="review-card-date">2 meses atrás</span></div>
+                    <p class="review-text">Melhor escritório da região.</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-card-top">
+                        <div class="review-author">
+                            <div class="review-avatar" style="background:#00BCD4;">D</div>
+                            <div><div class="review-info-name">Diandra Tainá Rockenbach</div><div class="review-info-count">3 avaliações</div></div>
+                        </div>
+                        <svg width="20" height="20" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/><path fill="none" d="M0 0h48v48H0z"/></svg>
+                    </div>
+                    <div class="review-card-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="review-card-date">2 meses atrás</span></div>
+                    <p class="review-text">São excelentes profissionais. Boa conduta e assessoria.</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-card-top">
+                        <div class="review-author">
+                            <div class="review-avatar" style="background:#4285F4;">J</div>
+                            <div><div class="review-info-name">Júlia Queiroz</div><div class="review-info-count">3 avaliações</div></div>
+                        </div>
+                        <svg width="20" height="20" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/><path fill="none" d="M0 0h48v48H0z"/></svg>
+                    </div>
+                    <div class="review-card-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="review-card-date">2 meses atrás</span></div>
+                    <p class="review-text">Equipe incrível e competente. Super recomendo!</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-card-top">
+                        <div class="review-author">
+                            <div class="review-avatar" style="background:#34A853;">G</div>
+                            <div><div class="review-info-name">Geison Neves</div><div class="review-info-count">6 avaliações · 3 fotos</div></div>
+                        </div>
+                        <svg width="20" height="20" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/><path fill="none" d="M0 0h48v48H0z"/></svg>
+                    </div>
+                    <div class="review-card-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="review-card-date">2 meses atrás</span></div>
+                    <p class="review-text">Ótimos profissionais e bem competentes, diga-se de passagem.</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-card-top">
+                        <div class="review-author">
+                            <div class="review-avatar" style="background:#EA4335;">J</div>
+                            <div><div class="review-info-name">Jaqueline Ribeiro</div><div class="review-info-count">9 avaliações</div></div>
+                        </div>
+                        <svg width="20" height="20" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/><path fill="none" d="M0 0h48v48H0z"/></svg>
+                    </div>
+                    <div class="review-card-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="review-card-date">2 meses atrás</span></div>
+                    <p class="review-text">Empresa formada por sócios altamente qualificados, éticos e profissionais.</p>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- RESULTADOS -->
-    <section class="resultados" id="resultados">
-        <div class="container">
-            <div style="text-align: center; margin-bottom: 60px;">
-                <div class="section-label">Resultados</div>
-                <h2 class="section-title">Resultados obtidos com a aplicação do Método RM</h2>
-            </div>
-            <div class="results-grid">
-                <div class="result-card fade-in">
-                    <div class="result-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                        </svg>
-                    </div>
-                    <h4>Segurança na condução das renegociações</h4>
-                    <p>A análise técnica dos contratos e das condições permite conduzir negociações com maior
-                        previsibilidade e consistência.</p>
-                </div>
-                <div class="result-card fade-in">
-                    <div class="result-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                            <circle cx="12" cy="12" r="3" />
-                        </svg>
-                    </div>
-                    <h4>Clareza sobre a estrutura financeira da operação</h4>
-                    <p>A compreensão detalhada das obrigações e encargos envolvidos possibilita decisões mais
-                        fundamentadas.</p>
-                </div>
-                <div class="result-card fade-in">
-                    <div class="result-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                            <polyline points="14 2 14 8 20 8" />
-                            <line x1="16" y1="13" x2="8" y2="13" />
-                            <line x1="16" y1="17" x2="8" y2="17" />
-                            <polyline points="10 9 9 9 8 9" />
-                        </svg>
-                    </div>
-                    <h4>Estratégia jurídica e financeira definida e personalizada</h4>
-                    <p>A partir do diagnóstico, são estruturados caminhos viáveis para reorganização das obrigações.</p>
-                </div>
-                <div class="result-card fade-in">
-                    <div class="result-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="12" y1="1" x2="12" y2="23" />
-                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-                        </svg>
-                    </div>
-                    <h4>Reorganização técnica do passivo</h4>
-                    <p>A análise das operações permite ajustar a estrutura da dívida à realidade da atividade
-                        desenvolvida.</p>
-                </div>
-                <div class="result-card fade-in">
-                    <div class="result-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                            <polyline points="9 22 9 12 15 12 15 22" />
-                        </svg>
-                    </div>
-                    <h4>Alinhamento da dívida à capacidade da operação</h4>
-                    <p>A condução estruturada das obrigações contribui para a continuidade da atividade produtiva, com
-                        objetivo de reduzir o passivo.</p>
-                </div>
-                <div class="result-card fade-in">
-                    <div class="result-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                            <circle cx="9" cy="7" r="4" />
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                        </svg>
-                    </div>
-                    <h4>Acompanhamento contínuo</h4>
-                    <p>A atuação se mantém após a implementação das medidas definidas, garantindo coerência na condução
-                        do processo.</p>
-                </div>
-            </div>
+        <div class="reviews-cta-wrap">
+            <a href="https://www.google.com/maps/search/Rockenbach+Mota+Advocacia+Lagoa+Formosa" target="_blank" rel="noopener noreferrer" class="reviews-cta-google">
+                <svg width="18" height="18" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/><path fill="none" d="M0 0h48v48H0z"/></svg>
+                Ver todas as avaliações no Google
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
         </div>
     </section>
 
-    <!-- DIFERENCIAL -->
-    <section class="diferencial" id="diferencial">
-        <div class="container">
-            <div style="text-align: center; margin-bottom: 60px;">
-                <div class="section-label">Por que somos diferentes</div>
-                <h2 class="section-title">Nossa abordagem</h2>
-                <p style="color: var(--text-light); font-size: 1.05rem; max-width: 580px; margin: 16px auto 0; line-height: 1.7;">
-                    Não resolvemos apenas um contrato. Analisamos a situação completa do produtor rural — da capacidade financeira à estrutura da dívida — e atuamos com método em cada etapa da negociação.
-                </p>
-            </div>
-            <div class="diferencial-card fade-in">
-                <h3 style="color: var(--gold); font-size: 1.4rem; margin-bottom: 28px;">Método RM</h3>
-                <ul class="compare-list">
-                    <li>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="20 6 9 17 4 12" />
-                        </svg>
-                        Entendimento completo da atividade rural
-                    </li>
-                    <li>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="20 6 9 17 4 12" />
-                        </svg>
-                        Diagnóstico completo da situação
-                    </li>
-                    <li>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="20 6 9 17 4 12" />
-                        </svg>
-                        Análise da capacidade financeira da atividade
-                    </li>
-                    <li>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="20 6 9 17 4 12" />
-                        </svg>
-                        Estruturação das alternativas de condução da dívida
-                    </li>
-                    <li>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="20 6 9 17 4 12" />
-                        </svg>
-                        Atuação técnica nas tratativas com instituições financeiras
-                    </li>
-                    <li>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="20 6 9 17 4 12" />
-                        </svg>
-                        Acompanhamento após a reorganização
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- SOBRE -->
+    <!-- SOBRE (INALTERADO) -->
     <section class="sobre" id="sobre">
         <div class="container">
             <div class="sobre-grid">
@@ -1541,54 +1813,20 @@
         </div>
     </section>
 
-    <!-- FORMULARIO -->
-    <section class="formulario" id="formulario">
+    <!-- CTA WHATSAPP -->
+    <section class="wpp-cta" id="contato">
         <div class="container">
-            <div class="form-wrapper">
-                <div class="form-text fade-in">
-                    <div class="section-label">Contato</div>
-                    <h2 class="section-title">Inicie a análise da situação da dívida rural</h2>
-                    <p>O prazo passou, mas ainda dá tempo. Preencha o formulário ao lado e entre em contato.</p>
-                </div>
-                <div class="form-box fade-in">
-                    <form id="leadForm" onsubmit="handleSubmit(event)">
-                        <div class="form-group">
-                            <label for="nome">Nome completo</label>
-                            <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="telefone">Telefone (WhatsApp)</label>
-                            <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="cidade">Cidade</label>
-                            <input type="text" id="cidade" name="cidade" placeholder="Sua cidade" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="banco">Instituição financeira do contrato</label>
-                            <input type="text" id="banco" name="banco" placeholder="Ex: Banco do Brasil, Sicoob...">
-                        </div>
-                        <div class="form-group">
-                            <label for="divida">Valor aproximado da divida</label>
-                            <select id="divida" name="divida">
-                                <option value="" disabled selected>Selecione uma faixa</option>
-                                <option value="100a500">R$ 100 mil a R$ 500 mil</option>
-                                <option value="500a1m">R$ 500 mil a R$ 1 milhão</option>
-                                <option value="1ma5m">R$ 1 milhão a R$ 5 milhões</option>
-                                <option value="acima5m">Acima de R$ 5 milhões</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="form-submit">Quero proteger meu negócio</button>
-                        <p class="form-disclaimer">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-                                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-                            </svg>
-                            Suas informações são confidenciais e protegidas por sigilo profissional.
-                        </p>
-                    </form>
-                </div>
+            <div class="wpp-cta-inner fade-in">
+                <div class="section-label" style="color: var(--gold); text-align: center; margin-bottom: 20px;">Fale conosco</div>
+                <h2>Sua produção não pode esperar o problema crescer</h2>
+                <p>Se você está enfrentando uma situação difícil ou quer evitar riscos no futuro, fale agora com quem entende do agronegócio. A primeira conversa é direta, pelo WhatsApp e sem compromisso.</p>
+                <a href="https://wa.me/5534999587061?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20falar%20com%20um%20especialista%20em%20agroneg%C3%B3cio." class="wpp-cta-btn" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    </svg>
+                    Falar com um Especialista Agora
+                </a>
+                <p class="wpp-cta-note">Atendimento em todo o Brasil &nbsp;·&nbsp; Primeira conversa sem compromisso</p>
             </div>
         </div>
     </section>
@@ -1601,34 +1839,29 @@
                     <div class="footer-logo">
                         <img src="assets/PNG DOURADO.png" alt="Rockenbach & Mota">
                     </div>
-                    <p>Escritorio especializado em direito empresarial e agronegócio. Protegendo o produtor rural com
-                        metodo, proximidade e respeito.</p>
+                    <p>Escritório especializado em direito empresarial e agronegócio. Protegendo o produtor rural com método, proximidade e respeito.</p>
                 </div>
                 <div>
                     <h5>Navegação</h5>
                     <ul class="footer-links">
                         <li><a href="#hero">Início</a></li>
-                        <li><a href="#metodo">Método RM</a></li>
-                        <li><a href="#resultados">Resultados</a></li>
-                        <li><a href="#sobre">Quem somos</a></li>
-                        <li><a href="#formulario">Contato</a></li>
+                        <li><a href="#servicos">Como Protegemos</a></li>
+                        <li><a href="#reviews">Avaliações</a></li>
+                        <li><a href="#sobre">Quem Somos</a></li>
+                        <li><a href="#contato">Contato</a></li>
                     </ul>
                 </div>
                 <div>
                     <h5>Contato</h5>
                     <div class="footer-contact-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                            <polyline points="22,6 12,13 2,6" />
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
                         </svg>
                         juridico@rmjuridico.com.br
                     </div>
                     <div class="footer-contact-item">
-                        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"
-                            style="width: 20px; height: 20px; margin-right: 12px; margin-top: 2px;">
-                            <path
-                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" style="width:16px;height:16px;color:var(--gold);flex-shrink:0;">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                         </svg>
                         (34) 99958-7061
                     </div>
@@ -1645,99 +1878,20 @@
     <a href="https://wa.me/5534999587061?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20M%C3%A9todo%20RM."
         class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco pelo WhatsApp">
         <svg viewBox="0 0 24 24" fill="currentColor">
-            <path
-                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
         </svg>
     </a>
 
     <!-- SCRIPTS -->
     <script>
-
-        // Navbar scroll effect
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            navbar.classList.toggle('scrolled', window.scrollY > 50);
-        });
-
         // Fade-in on scroll
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
+                if (entry.isIntersecting) entry.target.classList.add('visible');
             });
-        }, { threshold: 0.15 });
+        }, { threshold: 0.12 });
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-        // Phone mask
-        document.getElementById('telefone').addEventListener('input', function (e) {
-            let v = e.target.value.replace(/\D/g, '');
-            if (v.length > 11) v = v.slice(0, 11);
-            if (v.length > 6) v = `(${v.slice(0, 2)}) ${v.slice(2, 7)}-${v.slice(7)}`;
-            else if (v.length > 2) v = `(${v.slice(0, 2)}) ${v.slice(2)}`;
-            else if (v.length > 0) v = `(${v}`;
-            e.target.value = v;
-        });
-
-        // Form submit
-        async function handleSubmit(e) {
-            e.preventDefault();
-            const form = e.target;
-            const submitBtn = form.querySelector('.form-submit');
-            const originalBtnText = submitBtn.innerText;
-            
-            // Show loading state
-            submitBtn.disabled = true;
-            submitBtn.innerText = 'Enviando...';
-
-            const nome = form.nome.value;
-            const telefone = form.telefone.value;
-            const cidade = form.cidade.value;
-            const banco = form.banco.value;
-            const divida = form.divida.value;
-
-            // 1. Send Email via FormSubmit (AJAX)
-            try {
-                await fetch("https://formsubmit.co/ajax/juridico@rmjuridico.com.br", {
-                    method: "POST",
-                    headers: { 
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        Nome: nome,
-                        Telefone: telefone,
-                        Cidade: cidade,
-                        Banco: banco,
-                        Divida: divida,
-                        "_subject": "Novo Lead - Método RM",
-                        "_cc": "agchadar@gmail.com"
-                    })
-                });
-            } catch (error) {
-                console.error("Erro ao enviar e-mail:", error);
-            }
-
-            // 2. Build WhatsApp message
-            let msg = `Olá, vim pelo site do Método RM.%0A%0A`;
-            msg += `*Nome:* ${nome}%0A`;
-            msg += `*Telefone:* ${telefone}%0A`;
-            msg += `*Cidade:* ${cidade}%0A`;
-            if (banco) msg += `*Banco:* ${banco}%0A`;
-            if (divida) msg += `*Faixa da dívida:* ${divida}%0A`;
-
-            // 3. Open WhatsApp
-            window.open(`https://wa.me/5534999587061?text=${msg}`, '_blank');
-
-            // 4. Show success state in the UI
-            form.innerHTML = `
-                <div style="text-align:center; padding: 40px 0;">
-                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#2E7D4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                    <h3 style="font-family:'Inter', sans-serif; color: white; margin-top: 20px; font-size: 1.3rem; font-weight: 600;">Mensagem enviada!</h3>
-                    <p style="color: rgba(255,255,255,0.7); margin-top: 8px; font-size: 0.9rem;">Já abrimos seu WhatsApp. Entraremos em contato em breve.</p>
-                </div>
-            `;
-        }
     </script>
 </body>
 
